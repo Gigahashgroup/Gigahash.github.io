@@ -1,6 +1,837 @@
-<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Gigahash Global LLC - Strategic Consulting Solutions</title>    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    <style>        :root {            --primary: #2563eb;            --primary-dark: #1d4ed8;            --secondary: #0f172a;            --light: #f8fafc;            --accent: #10b981;            --gray: #64748b;            --light-gray: #e2e8f0;        }                * {            margin: 0;            padding: 0;            box-sizing: border-box;            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;        }                body {            background-color: #f1f5f9;            color: var(--secondary);            line-height: 1.6;        }                .container {            max-width: 1200px;            margin: 0 auto;            padding: 0 20px;        }                /* Header Styles */        header {            background-color: white;            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);            position: sticky;            top: 0;            z-index: 100;        }                .header-container {            display: flex;            justify-content: space-between;            align-items: center;            padding: 20px 0;        }                .logo {            display: flex;            align-items: center;            gap: 10px;        }                .logo-icon {            background: var(--primary);            color: white;            width: 40px;            height: 40px;            border-radius: 8px;            display: flex;            align-items: center;            justify-content: center;            font-size: 20px;            font-weight: bold;        }                .logo-text {            font-size: 24px;            font-weight: 700;            color: var(--secondary);        }                .logo-text span {            color: var(--primary);        }                nav ul {            display: flex;            list-style: none;            gap: 30px;        }                nav a {            text-decoration: none;            color: var(--secondary);            font-weight: 500;            transition: color 0.3s;        }                nav a:hover {            color: var(--primary);        }                /* Hero Section */        .hero {            background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);            color: white;            padding: 80px 0;            position: relative;            overflow: hidden;        }                .hero::before {            content: "";            position: absolute;            top: 0;            left: 0;            right: 0;            bottom: 0;            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon fill="rgba(255,255,255,0.05)" points="0,100 100,0 100,100"/></svg>');            background-size: cover;        }                .hero-content {            position: relative;            max-width: 600px;            z-index: 2;        }                .hero h1 {            font-size: 3.5rem;            margin-bottom: 20px;            line-height: 1.2;        }                .hero p {            font-size: 1.2rem;            margin-bottom: 30px;            opacity: 0.9;        }                .btn {            display: inline-block;            background: var(--accent);            color: white;            padding: 15px 35px;            border-radius: 8px;            text-decoration: none;            font-weight: 600;            transition: all 0.3s;            border: none;            cursor: pointer;            font-size: 1rem;        }                .btn:hover {            background: #059669;            transform: translateY(-3px);            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);        }                /* Services Section */        .services {            padding: 100px 0;            background-color: white;        }                .section-title {            text-align: center;            margin-bottom: 60px;        }                .section-title h2 {            font-size: 2.5rem;            color: var(--secondary);            margin-bottom: 15px;        }                .section-title p {            color: var(--gray);            max-width: 600px;            margin: 0 auto;        }                .services-grid {            display: grid;            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));            gap: 30px;        }                .service-card {            background: var(--light);            border-radius: 12px;            padding: 40px 30px;            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);            transition: transform 0.3s;            text-align: center;        }                .service-card:hover {            transform: translateY(-10px);        }                .service-icon {            background: var(--primary);            color: white;            width: 70px;            height: 70px;            border-radius: 50%;            display: flex;            align-items: center;            justify-content: center;            margin: 0 auto 25px;            font-size: 28px;        }                .service-card h3 {            font-size: 1.5rem;            margin-bottom: 15px;            color: var(--secondary);        }                .service-card p {            color: var(--gray);        }                /* Contact Form Section */        .contact {            padding: 100px 0;            background: linear-gradient(to bottom, #f1f5f9 0%, #e2e8f0 100%);        }                .contact-container {            display: grid;            grid-template-columns: 1fr 1fr;            gap: 50px;            align-items: center;        }                .contact-info h2 {            font-size: 2.5rem;            margin-bottom: 20px;            color: var(--secondary);        }                .contact-info p {            color: var(--gray);            margin-bottom: 30px;        }                .contact-details {            margin-top: 30px;        }                .contact-item {            display: flex;            align-items: center;            margin-bottom: 20px;        }                .contact-icon {            background: var(--primary);            color: white;            width: 40px;            height: 40px;            border-radius: 50%;            display: flex;            align-items: center;            justify-content: center;            margin-right: 15px;        }                .form-container {            background: white;            border-radius: 12px;            padding: 40px;            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);        }                .form-group {            margin-bottom: 25px;        }                .form-group label {            display: block;            margin-bottom: 8px;            font-weight: 500;            color: var(--secondary);        }                .form-group input,        .form-group textarea,        .form-group select {            width: 100%;            padding: 15px;            border: 1px solid var(--light-gray);            border-radius: 8px;            font-size: 1rem;            transition: border-color 0.3s;        }                .form-group input:focus,        .form-group textarea:focus,        .form-group select:focus {            border-color: var(--primary);            outline: none;        }                .form-group textarea {            min-height: 150px;            resize: vertical;        }                /* Footer */        footer {            background: var(--secondary);            color: white;            padding: 40px 0 20px;        }                .footer-container {            display: grid;            grid-template-columns: 2fr 1fr 1fr;            gap: 40px;        }                .footer-logo {            font-size: 24px;            font-weight: 700;            margin-bottom: 20px;        }                .footer-logo span {            color: var(--primary);        }                .footer-about p {            opacity: 0.7;            margin-bottom: 20px;        }                .social-links {            display: flex;            gap: 15px;        }                .social-icon {            width: 40px;            height: 40px;            border-radius: 50%;            background: rgba(255, 255, 255, 0.1);            display: flex;            align-items: center;            justify-content: center;            transition: all 0.3s;        }                .social-icon:hover {            background: var(--primary);            transform: translateY(-5px);        }                .footer-links h3 {            font-size: 1.2rem;            margin-bottom: 25px;            position: relative;        }                .footer-links h3::after {            content: "";            position: absolute;            bottom: -10px;            left: 0;            width: 40px;            height: 3px;            background: var(--primary);        }                .footer-links ul {            list-style: none;        }                .footer-links li {            margin-bottom: 12px;        }                .footer-links a {            color: rgba(255, 255, 255, 0.7);            text-decoration: none;            transition: all 0.3s;        }                .footer-links a:hover {            color: white;            padding-left: 5px;        }                .copyright {            text-align: center;            padding-top: 30px;            margin-top: 40px;            border-top: 1px solid rgba(255, 255, 255, 0.1);            opacity: 0.7;        }                /* Responsive Design */        @media (max-width: 900px) {            .contact-container {                grid-template-columns: 1fr;            }                        .footer-container {                grid-template-columns: 1fr;            }                        nav ul {                display: none;            }        }                @media (max-width: 600px) {            .hero h1 {                font-size: 2.5rem;            }                        .section-title h2 {                font-size: 2rem;            }                        .services-grid {                grid-template-columns: 1fr;            }        }    </style></head><body>    <!-- Header Section -->    <header>        <div class="container header-container">            <div class="logo">                <div class="logo-icon">G</div>                <div class="logo-text">Gigahash<span>Global</span></div>            </div>            <nav>                <ul>                    <li><a href="#services">Services</a></li>                    <li><a href="#contact">Contact</a></li>                    <li><a href="#about">About</a></li>                </ul>            </nav>        </div>    </header>
-    <!-- Hero Section -->    <section class="hero">        <div class="container">            <div class="hero-content">                <h1>Strategic Consulting for the Digital Age</h1>                <p>Gigahash Global LLC provides expert guidance to help your business navigate complex challenges and achieve sustainable growth in today's competitive landscape.</p>                <a href="#contact" class="btn">Get in Touch</a>            </div>        </div>    </section>
-    <!-- Services Section -->    <section class="services" id="services">        <div class="container">            <div class="section-title">                <h2>Our Consulting Services</h2>                <p>We offer specialized expertise across multiple domains to help your organization thrive</p>            </div>            <div class="services-grid">                <div class="service-card">                    <div class="service-icon">                        <i class="fas fa-chart-line"></i>                    </div>                    <h3>Business Strategy</h3>                    <p>Comprehensive market analysis and strategic planning to position your business for long-term success.</p>                </div>                <div class="service-card">                    <div class="service-icon">                        <i class="fas fa-cogs"></i>                    </div>                    <h3>Operations Optimization</h3>                    <p>Streamline processes, reduce costs, and enhance efficiency across your organization.</p>                </div>                <div class="service-card">                    <div class="service-icon">                        <i class="fas fa-laptop-code"></i>                    </div>                    <h3>Digital Transformation</h3>                    <p>Leverage technology to modernize your business and gain competitive advantage.</p>                </div>                <div class="service-card">                    <div class="service-icon">                        <i class="fas fa-users"></i>                    </div>                    <h3>Leadership Development</h3>                    <p>Cultivate effective leadership capabilities to drive organizational excellence.</p>                </div>            </div>        </div>    </section>
-    <!-- Contact Form Section -->    <section class="contact" id="contact">        <div class="container">            <div class="contact-container">                <div class="contact-info">                    <h2>Ready to Transform Your Business?</h2>                    <p>Complete the form to schedule a free consultation. Our experts will contact you within 24 hours to discuss how we can help your organization achieve its goals.</p>                                        <div class="contact-details">                        <div class="contact-item">                            <div class="contact-icon">                                <i class="fas fa-envelope"></i>                            </div>                            <div>                                <h4>Email Us</h4>                                <p>contact@gigahashglobal.com</p>                            </div>                        </div>                        <div class="contact-item">                            <div class="contact-icon">                                <i class="fas fa-phone"></i>                            </div>                            <div>                                <h4>Call Us</h4>                                <p>(555) 123-4567</p>                            </div>                        </div>                        <div class="contact-item">                            <div class="contact-icon">                                <i class="fas fa-map-marker-alt"></i>                            </div>                            <div>                                <h4>Visit Us</h4>                                <p>123 Business Avenue, Suite 100<br>New York, NY 10001</p>                            </div>                        </div>                    </div>                </div>                                <div class="form-container">                    <form id="leadForm">                        <div class="form-group">                            <label for="name">Full Name *</label>                            <input type="text" id="name" name="name" required>                        </div>                        <div class="form-group">                            <label for="email">Email Address *</label>                            <input type="email" id="email" name="email" required>                        </div>                        <div class="form-group">                            <label for="phone">Phone Number</label>                            <input type="tel" id="phone" name="phone">                        </div>                        <div class="form-group">                            <label for="company">Company Name *</label>                            <input type="text" id="company" name="company" required>                        </div>                        <div class="form-group">                            <label for="service">Service of Interest</label>                            <select id="service" name="service">                                <option value="">Select a service</option>                                <option value="strategy">Business Strategy</option>                                <option value="operations">Operations Optimization</option>                                <option value="digital">Digital Transformation</option>                                <option value="leadership">Leadership Development</option>                                <option value="other">Other</option>                            </select>                        </div>                        <div class="form-group">                            <label for="message">How can we help? *</label>                            <textarea id="message" name="message" required></textarea>                        </div>                        <button type="submit" class="btn">Request Consultation</button>                    </form>                </div>            </div>        </div>    </section>
-    <!-- Footer -->    <footer>        <div class="container">            <div class="footer-container">                <div class="footer-about">                    <div class="footer-logo">Gigahash<span>Global</span></div>                    <p>Providing strategic consulting services to forward-thinking organizations since 2015. Our mission is to empower businesses to achieve sustainable growth and operational excellence.</p>                    <div class="social-links">                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>                    </div>                </div>                                <div class="footer-links">                    <h3>Quick Links</h3>                    <ul>                        <li><a href="#services">Services</a></li>                        <li><a href="#contact">Contact</a></li>                        <li><a href="#">Case Studies</a></li>                        <li><a href="#">Resources</a></li>                        <li><a href="#">Careers</a></li>                    </ul>                </div>                                <div class="footer-links">                    <h3>Services</h3>                    <ul>                        <li><a href="#">Business Strategy</a></li>                        <li><a href="#">Operations</a></li>                        <li><a href="#">Digital Transformation</a></li>                        <li><a href="#">Leadership</a></li>                        <li><a href="#">Financial Advisory</a></li>                    </ul>                </div>            </div>                        <div class="copyright">                <p>&copy; 2025 Gigahash Global LLC. All rights reserved.</p>            </div>        </div>    </footer>
-    <script>        // Form submission handling        document.getElementById('leadForm').addEventListener('submit', function(e) {            e.preventDefault();                        // Get form values            const name = document.getElementById('name').value;            const email = document.getElementById('email').value;            const company = document.getElementById('company').value;                        // In a real implementation, you would send this data to your server            // For this example, we'll just show a success message            alert(`Thank you ${name} from ${company}! We'll contact you at ${email} shortly.`);                        // Reset form            this.reset();        });                // Smooth scrolling for anchor links        document.querySelectorAll('a[href^="#"]').forEach(anchor => {            anchor.addEventListener('click', function(e) {                e.preventDefault();                document.querySelector(this.getAttribute('href')).scrollIntoView({                    behavior: 'smooth'                });            });        });    </script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gigahash Global LLC | Emerging Markets Consulting Experts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a2540;
+            --primary-light: #1a4b8c;
+            --secondary: #00a881;
+            --accent: #ff6b35;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .logo-text span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--secondary);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 37, 64, 0.8), rgba(10, 37, 64, 0.8)), 
+                        url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            background: #008a6e;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        /* Expertise Section */
+        .expertise {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .expertise-card {
+            background: var(--light);
+            border-radius: 6px;
+            padding: 40px 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--secondary);
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .expertise-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .expertise-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .expertise-icon {
+            color: var(--secondary);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Africa Focus Section */
+        .africa-focus {
+            background: linear-gradient(rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.9)), 
+                        url('https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+        }
+        
+        .africa-focus h2 {
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .africa-focus p {
+            margin-bottom: 30px;
+            max-width: 700px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .africa-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .contact-info h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            color: var(--gray);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+        
+        .contact-details {
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .contact-text p, .contact-text a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-text a:hover {
+            color: var(--secondary);
+        }
+        
+        .form-container {
+            background: var(--light);
+            border-radius: 6px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--secondary);
+            outline: none;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .footer-about {
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            color: white;
+        }
+        
+        .footer-logo span {
+            color: var(--secondary);
+        }
+        
+        .footer-about p {
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links h3 {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            position: relative;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .footer-links h3::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav {
+                margin-top: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">G</div>
+                <div class="logo-text">Gigahash<span>Global</span></div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#africa">Africa Focus</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Emerging Markets Consulting Excellence</h1>
+            <p>Gigahash Global LLC delivers strategic insights and operational expertise to help businesses navigate and thrive in Africa's dynamic markets. Our deep regional knowledge combined with global best practices creates sustainable value for our clients.</p>
+            <a href="#contact" class="btn">Get Started</a>
+            <a href="#expertise" class="btn btn-outline">Our Expertise</a>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="expertise" id="expertise">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Expertise</h2>
+                <p>We provide specialized consulting services tailored to the unique challenges and opportunities of emerging markets, with particular focus on Sub-Saharan Africa.</p>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-chart-network"></i>
+                    </div>
+                    <h3>Market Entry Strategy</h3>
+                    <p>Comprehensive market analysis and strategic planning to successfully enter and expand in African markets, navigating regulatory complexities and cultural nuances.</p>
+                    <a href="#contact" class="btn">Learn More</a>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Investment Advisory</h3>
+                    <p>Identifying high-potential investment opportunities across Africa with rigorous due diligence and risk assessment frameworks tailored to emerging markets.</p>
+                    <a href="#contact" class="btn">Learn More</a>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-people-arrows"></i>
+                    </div>
+                    <h3>Partnership Development</h3>
+                    <p>Building strategic alliances between international investors and local African partners, creating mutually beneficial relationships that drive sustainable growth.</p>
+                    <a href="#contact" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Africa Focus Section -->
+    <section class="africa-focus" id="africa">
+        <div class="container">
+            <h2>Africa Specialization</h2>
+            <p>With boots-on-the-ground experience across 18 African countries, we offer unparalleled insights into the continent's diverse markets. Our team combines local knowledge with international expertise to unlock Africa's potential.</p>
+            <p>We understand the unique challenges of operating in African markets - from infrastructure constraints to currency volatility - and help clients turn these into competitive advantages.</p>
+            
+            <div class="africa-stats">
+                <div class="stat-item">
+                    <div class="stat-number">18+</div>
+                    <div class="stat-label">African Countries</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Industry Sectors</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Local Partners</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$300M</div>
+                    <div class="stat-label">Deals Advised</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Contact Our Africa Specialists</h2>
+                    <p>Whether you're exploring new opportunities or facing challenges in African markets, our team is ready to help. Reach out to schedule a consultation with our experts.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Our Headquarters</h4>
+                                <p>15833 Mill Creek Blvd #13352<br>Mill Creek, WA, 98012</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p><a href="tel:2534805334">(253) 480-5334</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p><a href="mailto:contact@gigahashglobal.com">contact@gigahashglobal.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-container">
+                    <form id="leadForm" action="https://formspree.io/f/your-form-id" method="POST">
+                        <input type="hidden" name="_subject" value="New Contact Request - Gigahash Global">
+                        <input type="hidden" name="_replyto" value="contact@gigahashglobal.com">
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service of Interest</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service</option>
+                                <option value="market-entry">Market Entry Strategy</option>
+                                <option value="investment">Investment Advisory</option>
+                                <option value="partnerships">Partnership Development</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">How can we help? *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">Gigahash<span>Global</span></div>
+                    <p>Specialized consulting for emerging markets with deep expertise across the African continent. Helping businesses navigate complexity and unlock growth opportunities.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Market Entry Strategy</a></li>
+                        <li><a href="#">Investment Advisory</a></li>
+                        <li><a href="#">Partnership Development</a></li>
+                        <li><a href="#">Risk Assessment</a></li>
+                        <li><a href="#">Operational Optimization</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Approach</a></li>
+                        <li><a href="#">Africa Expertise</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Gigahash Global LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handling
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const form = e.target;
+            const formData = new FormData(form);
+            
+            // In a real implementation, you would send this data to Formspree
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Thank you for your inquiry! We will contact you shortly.');
+                    form.reset();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .catch(error => {
+                alert('There was a problem with your submission. Please try again or contact us directly.');
+                console.error('Error:', error);
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

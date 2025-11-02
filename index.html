@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gigahash Global | Strategic Lithium Development & Direct Lithium Extraction Consulting</title>
-    <meta name="description" content="Strategic consultancy bridging DLE technology, capital, and brine resources across Africa. Creating ethical, sustainable lithium supply chains.">
+    <title>Gigahash Global | Blockchain-Secured Lithium Development & DLE Consulting</title>
+    <meta name="description" content="Strategic consultancy bridging DLE technology, capital, and brine resources across Africa with blockchain-secured partnerships.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -12,6 +12,8 @@
             --primary: #0d2344;
             --primary-light: #1a3a6e;
             --secondary: #00a896;
+            --blockchain-blue: #2962FF;
+            --trust-green: #00C853;
             --accent: #e31937;
             --light: #f8f9fa;
             --dark: #212529;
@@ -69,7 +71,7 @@
         .logo-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--primary), var(--blockchain-blue));
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -103,7 +105,7 @@
         }
         
         nav a:hover {
-            color: var(--secondary);
+            color: var(--blockchain-blue);
         }
         
         nav a::after {
@@ -113,7 +115,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--secondary);
+            background: var(--blockchain-blue);
             transition: var(--transition);
         }
         
@@ -122,7 +124,7 @@
         }
         
         .nav-cta {
-            background: var(--secondary);
+            background: var(--blockchain-blue);
             color: white;
             padding: 10px 24px;
             border-radius: 6px;
@@ -133,7 +135,7 @@
         .nav-cta:hover {
             background: var(--primary);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 168, 150, 0.3);
+            box-shadow: 0 5px 15px rgba(41, 98, 255, 0.3);
         }
         
         /* Enhanced Hero Section */
@@ -186,7 +188,7 @@
         
         .btn {
             display: inline-block;
-            background: var(--secondary);
+            background: var(--blockchain-blue);
             color: white;
             padding: 16px 38px;
             border-radius: 6px;
@@ -197,7 +199,7 @@
             cursor: pointer;
             font-size: 1rem;
             letter-spacing: 0.5px;
-            box-shadow: 0 4px 14px rgba(0, 168, 150, 0.3);
+            box-shadow: 0 4px 14px rgba(41, 98, 255, 0.3);
         }
         
         .btn:hover {
@@ -218,10 +220,27 @@
             border-color: white;
         }
         
-        /* Enhanced Expertise Section */
-        .expertise {
-            padding: 120px 0;
-            background-color: white;
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* Blockchain Protection Section */
+        .blockchain-protection {
+            padding: 100px 0;
+            background: var(--light);
         }
         
         .section-title {
@@ -247,7 +266,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: var(--secondary);
+            background: var(--blockchain-blue);
             border-radius: 2px;
         }
         
@@ -257,6 +276,97 @@
             margin: 0 auto;
             font-size: 1.2rem;
             font-weight: 300;
+        }
+        
+        .protection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+        
+        .protection-card {
+            background: white;
+            border-radius: 12px;
+            padding: 45px 35px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+            transition: var(--transition);
+            border-top: 4px solid var(--blockchain-blue);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .protection-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            background: linear-gradient(135deg, var(--primary), var(--blockchain-blue));
+            transition: var(--transition);
+            z-index: 0;
+        }
+        
+        .protection-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .protection-card:hover::before {
+            height: 100%;
+        }
+        
+        .protection-card > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .protection-card:hover .protection-icon,
+        .protection-card:hover h3,
+        .protection-card:hover p,
+        .protection-card:hover .protection-list li {
+            color: white;
+        }
+        
+        .protection-icon {
+            color: var(--blockchain-blue);
+            font-size: 42px;
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+        
+        .protection-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+            color: var(--primary);
+            transition: var(--transition);
+            font-weight: 600;
+        }
+        
+        .protection-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            transition: var(--transition);
+            line-height: 1.7;
+        }
+        
+        .protection-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+        
+        .protection-list li {
+            margin-bottom: 8px;
+            color: var(--gray);
+            transition: var(--transition);
+        }
+        
+        /* Enhanced Expertise Section */
+        .expertise {
+            padding: 120px 0;
+            background-color: white;
         }
         
         .expertise-grid {
@@ -272,7 +382,7 @@
             padding: 45px 35px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
             transition: var(--transition);
-            border-top: 4px solid var(--secondary);
+            border-top: 4px solid var(--blockchain-blue);
             position: relative;
             overflow: hidden;
         }
@@ -284,7 +394,7 @@
             left: 0;
             right: 0;
             height: 0;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--primary), var(--blockchain-blue));
             transition: var(--transition);
             z-index: 0;
         }
@@ -311,7 +421,7 @@
         }
         
         .expertise-icon {
-            color: var(--secondary);
+            color: var(--blockchain-blue);
             font-size: 42px;
             margin-bottom: 25px;
             transition: var(--transition);
@@ -332,8 +442,20 @@
             line-height: 1.7;
         }
         
+        .blockchain-badge {
+            background: var(--blockchain-blue);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        
         .solution-link {
-            color: var(--secondary);
+            color: var(--blockchain-blue);
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
@@ -367,7 +489,7 @@
             left: 0;
             right: 0;
             height: 6px;
-            background: var(--secondary);
+            background: var(--blockchain-blue);
         }
         
         .global-container {
@@ -424,22 +546,24 @@
         
         .stat-item {
             text-align: center;
-            padding: 20px;
+            padding: 25px 20px;
             background: rgba(255, 255, 255, 0.08);
-            border-radius: 8px;
+            border-radius: 12px;
             backdrop-filter: blur(10px);
             transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .stat-item:hover {
             background: rgba(255, 255, 255, 0.15);
             transform: translateY(-5px);
+            border-color: var(--blockchain-blue);
         }
         
         .stat-number {
             font-size: 2.8rem;
             font-weight: 700;
-            color: var(--secondary);
+            color: var(--blockchain-blue);
             margin-bottom: 8px;
             line-height: 1;
         }
@@ -450,6 +574,13 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .stat-desc {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            font-weight: 300;
         }
         
         /* Enhanced Solutions Section */
@@ -472,6 +603,7 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
             transition: var(--transition);
             position: relative;
+            border: 1px solid var(--light-gray);
         }
         
         .solution-card::before {
@@ -481,7 +613,7 @@
             left: 0;
             right: 0;
             height: 0;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--primary), var(--blockchain-blue));
             transition: var(--transition);
             z-index: 1;
             opacity: 0;
@@ -490,6 +622,7 @@
         .solution-card:hover {
             transform: translateY(-12px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            border-color: var(--blockchain-blue);
         }
         
         .solution-card:hover::before {
@@ -547,6 +680,22 @@
             line-height: 1.6;
         }
         
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-tag {
+            background: var(--trust-green);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
         /* Enhanced Contact Section */
         .contact {
             padding: 120px 0;
@@ -592,7 +741,7 @@
         }
         
         .contact-icon {
-            color: var(--secondary);
+            color: var(--blockchain-blue);
             font-size: 22px;
             margin-right: 18px;
             margin-top: 3px;
@@ -617,10 +766,12 @@
             padding: 45px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
             transition: var(--transition);
+            border: 1px solid var(--light-gray);
         }
         
         .form-container:hover {
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--blockchain-blue);
         }
         
         .form-group {
@@ -649,9 +800,9 @@
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
-            border-color: var(--secondary);
+            border-color: var(--blockchain-blue);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(0, 168, 150, 0.1);
+            box-shadow: 0 0 0 3px rgba(41, 98, 255, 0.1);
         }
         
         .form-group textarea {
@@ -707,7 +858,7 @@
         }
         
         .social-icon:hover {
-            background: var(--secondary);
+            background: var(--blockchain-blue);
             transform: translateY(-5px);
         }
         
@@ -726,7 +877,7 @@
             left: 0;
             width: 40px;
             height: 3px;
-            background: var(--secondary);
+            background: var(--blockchain-blue);
             border-radius: 2px;
         }
         
@@ -802,6 +953,10 @@
             
             .hero h1 {
                 font-size: 3rem;
+            }
+            
+            .protection-grid {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -880,28 +1035,11 @@
             .solution-content {
                 padding: 30px 25px;
             }
+            
+            .protection-card {
+                padding: 30px 25px;
+            }
         }
-    .trust-badges {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin: 25px 0;
-    flex-wrap: wrap;
-}
-
-.trust-badge {
-    background: rgba(255,255,255,0.2);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    border: 1px solid rgba(255,255,255,0.3);
-
-}
-
-.blockchain-protection {
-    padding: 80px 0;
-    background: var(--light);
-}
     </style>
 </head>
 <body>
@@ -915,7 +1053,7 @@
             <nav>
                 <ul>
                     <li><a href="#expertise">Expertise</a></li>
-                    <li><a href="#global">Strategic Approach</a></li>
+                    <li><a href="#blockchain">Blockchain Protection</a></li>
                     <li><a href="#solutions">Solutions</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#contact" class="nav-cta">Get Started</a></li>
@@ -925,62 +1063,117 @@
     </header>
 
     <!-- Hero Section -->
-<section class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <h1>Blockchain-Secured Lithium Development in Africa</h1>
-            <p>Engineering trust through smart contract-enforced partnerships and transparent operations for international investors and technology providers</p>
-            <div class="trust-badges">
-                <span class="trust-badge">Smart Contract Protected</span>
-                <span class="trust-badge">Revenue Transparency</span>
-                <span class="trust-badge">Automated Compliance</span>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Blockchain-Secured Lithium Development in Africa</h1>
+                <p>Engineering trust through smart contract-enforced partnerships and transparent operations for international investors and technology providers</p>
+                <div class="trust-badges">
+                    <span class="trust-badge">Smart Contract Protected</span>
+                    <span class="trust-badge">Revenue Transparency</span>
+                    <span class="trust-badge">Automated Compliance</span>
+                </div>
+                <div>
+                    <a href="#contact" class="btn">Secure Your Partnership</a>
+                    <a href="#blockchain" class="btn btn-outline">How We Protect Partners</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="blockchain-protection">
-    <!-- Your blockchain trust engineering content -->
-</section>
-  
-<!-- Expertise Section -->
+    <!-- Blockchain Protection Section -->
+    <section class="blockchain-protection" id="blockchain">
+        <div class="container">
+            <div class="section-title">
+                <h2>Engineering Trust Through Technology</h2>
+                <p>We solve the fundamental risk challenges that have limited foreign investment in African resources</p>
+            </div>
+            
+            <div class="protection-grid">
+                <div class="protection-card">
+                    <div class="protection-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Smart Contract Enforcement</h3>
+                    <p>Revenue sharing, royalty payments, and milestone obligations are codified in self-executing smart contracts that cannot be altered or disputed.</p>
+                    <ul class="protection-list">
+                        <li>✓ Automatic profit distribution</li>
+                        <li>✓ Milestone-based fund release</li>
+                        <li>✓ Eliminates payment disputes</li>
+                    </ul>
+                </div>
+                
+                <div class="protection-card">
+                    <div class="protection-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Immutable Transparency</h3>
+                    <p>Every kilogram of lithium produced, every royalty payment, and all operational data is recorded on an unchangeable ledger visible to all authorized partners.</p>
+                    <ul class="protection-list">
+                        <li>✓ Real-time production tracking</li>
+                        <li>✓ Transparent revenue flows</li>
+                        <li>✓ Auditable compliance records</li>
+                    </ul>
+                </div>
+                
+                <div class="protection-card">
+                    <div class="protection-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Regulatory Compliance Built-In</h3>
+                    <p>Nigerian mining licenses, environmental permits, and local content requirements are verified and recorded on-chain, creating an unforgeable compliance trail.</p>
+                    <ul class="protection-list">
+                        <li>✓ Automated license verification</li>
+                        <li>✓ ESG requirement tracking</li>
+                        <li>✓ Cross-border compliance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
     <section class="expertise" id="expertise">
         <div class="container">
             <div class="section-title">
-                <h2>Our Strategic Expertise</h2>
-                <p>Specialized services connecting DLE technology, capital, and brine resources for sustainable lithium development</p>
+                <h2>Blockchain-Enhanced Expertise</h2>
+                <p>Specialized services connecting DLE technology, capital, and brine resources with blockchain-secured partnerships</p>
             </div>
             <div class="expertise-grid">
                 <div class="expertise-card fade-in">
                     <div class="expertise-icon">
                         <i class="fas fa-bolt"></i>
                     </div>
-                    <h3>DLE Technology Sourcing</h3>
-                    <p>We identify and partner with leading Direct Lithium Extraction technology providers with proven capabilities in processing complex brines, achieving recovery rates up to 92% with 96.5% purity.</p>
+                    <h3>DLE Technology Sourcing with Blockchain Protection</h3>
+                    <p>We identify and partner with leading Direct Lithium Extraction technology providers, securing IP and royalty streams through blockchain-encoded licensing agreements that guarantee automated, transparent payments.</p>
+                    <div class="blockchain-badge">Smart Contract Protected</div>
                     <a href="#" class="solution-link">Learn more <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="expertise-card fade-in">
                     <div class="expertise-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Project De-risking & Validation</h3>
-                    <p>Our comprehensive approach validates brine resources, technology fit, and economic viability, leveraging proven DLE performance data and modular deployment strategies.</p>
+                    <h3>Blockchain-Enabled Project De-risking</h3>
+                    <p>Our comprehensive validation approach integrates blockchain verification for brine resources, technology performance, and economic viability, creating investor confidence through immutable data records.</p>
+                    <div class="blockchain-badge">Data Integrity Guaranteed</div>
                     <a href="#" class="solution-link">Learn more <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="expertise-card fade-in">
                     <div class="expertise-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h3>Stakeholder Alignment</h3>
-                    <p>We structure partnerships between brine suppliers, technology providers, and funding partners with clear value distribution models and risk mitigation frameworks.</p>
+                    <h3>Smart Contract Partnership Structuring</h3>
+                    <p>We design multi-party agreements with blockchain-enforced execution, ensuring technology providers receive guaranteed royalties and funding partners achieve protected returns through automated distribution.</p>
+                    <div class="blockchain-badge">Automated Execution</div>
                     <a href="#" class="solution-link">Learn more <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="expertise-card fade-in">
                     <div class="expertise-icon">
                         <i class="fas fa-expand-arrows-alt"></i>
                     </div>
-                    <h3>Market Development</h3>
-                    <p>Strategic expansion across West Africa and beyond, establishing decentralized lithium production hubs that leverage local brine resources and create ethical supply chains.</p>
+                    <h3>Blockchain-Verified Market Development</h3>
+                    <p>Strategic expansion across West Africa using blockchain-transparent operations that provide real-time visibility into production, compliance, and revenue sharing for all stakeholders.</p>
+                    <div class="blockchain-badge">Full Transparency</div>
                     <a href="#" class="solution-link">Learn more <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -991,310 +1184,5 @@
     <section class="global" id="global">
         <div class="container global-container">
             <div class="global-content">
-                <h2>Strategic Supply Chain Architecture & Risk Intelligence</h2>
-                <p>We serve as the Strategic Architect for a new generation of lithium production, leveraging integrated global networks and proven DLE technology which achieves high yields of up to 92% recovery from complex brines.</p>
-                <p>Our proprietary methodologies deliver comprehensive solutions by integrating deep regional geological and policy knowledge with advanced subsurface evaluation techniques to strategically de-risk unconventional brine access and ensure ethical, formalized supply chains.</p>
-                
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-number">92%</div>
-                        <div class="stat-label">Lithium Recovery</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">96.5%</div>
-                        <div class="stat-label">Product Purity</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">300+</div>
-                        <div class="stat-label">Operational Hours</div>
-                    </div>
-                </div>
-            </div>
-            <div class="global-image">
-                <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Advanced lithium extraction technology">
-            </div>
-        </div>
-    </section>
-
-    <!-- Solutions Section -->
-    <section class="solutions" id="solutions">
-        <div class="container">
-            <div class="section-title">
-                <h2>Strategic Solutions</h2>
-                <p>Comprehensive approaches to lithium project development and supply chain creation</p>
-            </div>
-            <div class="solutions-grid">
-                <div class="solution-card fade-in">
-                    <div class="solution-image">
-                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="DLE Technology">
-                    </div>
-                    <div class="solution-content">
-                        <h3>DLE Technology Integration</h3>
-                        <p>Seamlessly integrate proven DLE technologies with local brine resources, adapting to specific chemical compositions and operational environments.</p>
-                        <a href="#" class="solution-link">Explore solution <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="solution-card fade-in">
-                    <div class="solution-image">
-                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1911&q=80" alt="Project financing">
-                    </div>
-                    <div class="solution-content">
-                        <h3>Project Financing & Structuring</h3>
-                        <p>Develop bankable project structures and connect with capital partners through transparent financial models and risk-mitigated investment frameworks.</p>
-                        <a href="#" class="solution-link">Explore solution <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="solution-card fade-in">
-                    <div class="solution-image">
-                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Brine assessment">
-                    </div>
-                    <div class="solution-content">
-                        <h3>Brine Resource Assessment</h3>
-                        <p>Comprehensive evaluation of produced water and aquifer brines to determine lithium concentration, extraction feasibility, and economic potential.</p>
-                        <a href="#" class="solution-link">Explore solution <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="solution-card fade-in">
-                    <div class="solution-image">
-                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Regulatory compliance">
-                    </div>
-                    <div class="solution-content">
-                        <h3>Regulatory Navigation & Compliance</h3>
-                        <p>Navigate complex regulatory environments across multiple jurisdictions while ensuring full compliance with local content and environmental requirements.</p>
-                        <a href="#" class="solution-link">Explore solution <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container contact-container">
-            <div class="contact-info">
-                <h2>Connect With Our Lithium Experts</h2>
-                <p>Our team is ready to discuss your lithium project requirements, whether you're a technology provider, funding partner, or brine resource holder.</p>
-                
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Headquarters</h4>
-                            <p>15833 Mill Creek Blvd #13352<br>Mill Creek, WA, 98012</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Phone</h4>
-                            <p>253-480-5334</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Email</h4>
-                            <p>info@gigahashgroup.com</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-container fade-in">
-                <form id="leadForm" action="https://formspree.io/f/xldolbqa" method="POST">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="company">Company Name *</label>
-                        <input type="text" id="company" name="company" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="partner-type">I am a:</label>
-                        <select id="partner-type" name="partner-type">
- <div class="form-group">
-      <div class="form-group">
-    <label for="partner-type">I am a:</label>
-    < <div class="form-group">
-            <label for="partner-type">I am a:</label>
-            <select id="partner-type" name="partner-type">
-                <option value="">Select partner type</option>
-                <option value="technology-provider">DLE Technology Provider</option>
-                <option value="funding-partner">Funding/Investment Partner</option>
-                <option value="brine-supplier">Brine Resource Supplier</option>
-                <option value="operator">Project Operator</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="concern">Primary Protection Concern</label>
-            <select id="concern" name="concern">
-                <option value="">Select your main concern</option>
-                <option value="revenue-protection">Revenue Sharing Enforcement</option>
-                <option value="ip-protection">Intellectual Property Protection</option>
-                <option value="compliance">Regulatory Compliance Verification</option>
-                <option value="transparency">Operational Transparency</option>
-                <option value="payment-security">Payment Security & Timing</option>
-            </select>
-        </div>
-        </div>
-        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">How can we help? *</label>
-                        <textarea id="message" name="message" placeholder="Please describe your project, resources, or partnership interest..." required></textarea>
-                    </div>
-                    <input type="hidden" name="_subject" value="New Lithium Project Inquiry from Gigahash Global Website">
-                    <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
-                    <button type="submit" class="btn">Submit Inquiry</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-about">
-                    <div class="footer-logo">
-                        <div class="logo-icon">G</div>
-                        Gigahash Global
-                    </div>
-                    <p>Strategic consultants bridging DLE technology, capital, and brine resources to create ethical, sustainable lithium supply chains across Africa.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#">DLE Technology Sourcing</a></li>
-                        <li><a href="#">Project Financing</a></li>
-                        <li><a href="#">Brine Assessment</a></li>
-                        <li><a href="#">Regulatory Compliance</a></li>
-                        <li><a href="#">Market Development</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h3>Industries</h3>
-                    <ul>
-                        <li><a href="#">Lithium Extraction</a></li>
-                        <li><a href="#">Energy Transition</a></li>
-                        <li><a href="#">Oil & Gas</a></li>
-                        <li><a href="#">Mining</a></li>
-                        <li><a href="#">Sustainable Energy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Our Approach</a></li>
-                        <li><a href="#">Case Studies</a></li>
-                        <li><a href="#">Insights</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 Gigahash Global LLC. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 5px 20px rgba(13, 35, 68, 0.1)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = '0 2px 30px rgba(13, 35, 68, 0.08)';
-            }
-        });
-
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.addEventListener('DOMContentLoaded', function() {
-            const elementsToAnimate = document.querySelectorAll('.expertise-card, .solution-card, .form-container');
-            elementsToAnimate.forEach(el => {
-                observer.observe(el);
-            });
-        });
-
-        // Form submission handling
-        document.getElementById('leadForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const formData = new FormData(this);
-            
-            // In a real implementation, you would send this data to your server
-            fetch(this.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    window.location.href = this.querySelector('[name="_next"]').value;
-                } else {
-                    throw new Error('Network response was not ok');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('There was a problem submitting your form. Please try again.');
-            });
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                <h2>Blockchain-Architected Supply Chains</h2>
+                <p>We serve as the Strategic Architect for a new generation of lithium production, leveraging blockchain technology to create transparent, enforceable partnerships that achieve up to 92% recovery from complex

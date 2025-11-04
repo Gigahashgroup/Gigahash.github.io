@@ -137,6 +137,61 @@
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(41, 98, 255, 0.3);
         }
+
+        /* Partner Type Selector */
+        .partner-selector {
+            background: white;
+            padding: 60px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .selector-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .partner-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--blockchain-blue);
+            box-shadow: 0 10px 30px rgba(41, 98, 255, 0.1);
+        }
+
+        .partner-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--blockchain-blue), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 32px;
+        }
+
+        .partner-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .partner-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
         
         /* Enhanced Hero Section */
         .hero {
@@ -218,6 +273,15 @@
         .btn-outline:hover {
             background: rgba(255, 255, 255, 0.1);
             border-color: white;
+        }
+
+        .btn-partner {
+            background: var(--trust-green);
+            box-shadow: 0 4px 14px rgba(0, 200, 83, 0.3);
+        }
+
+        .btn-partner:hover {
+            background: var(--secondary);
         }
         
         /* Trust Badges */
@@ -539,7 +603,7 @@
         
         .stats {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 25px;
             margin-top: 50px;
         }
@@ -933,6 +997,10 @@
             .container {
                 max-width: 1140px;
             }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         @media (max-width: 992px) {
@@ -956,6 +1024,10 @@
             }
             
             .protection-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .selector-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -1039,6 +1111,10 @@
             .protection-card {
                 padding: 30px 25px;
             }
+            
+            .partner-card {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
@@ -1052,11 +1128,12 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#expertise">Expertise</a></li>
-                    <li><a href="#blockchain">Blockchain Protection</a></li>
-                    <li><a href="#solutions">Solutions</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#contact" class="nav-cta">Get Started</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="technology.html">Technology</a></li>
+                    <li><a href="partners.html">Partners</a></li>
+                    <li><a href="commercial.html">Commercial</a></li>
+                    <li><a href="implementation.html">Implementation</a></li>
+                    <li><a href="contact.html" class="nav-cta">Get Started</a></li>
                 </ul>
             </nav>
         </div>
@@ -1072,10 +1149,47 @@
                     <span class="trust-badge">Smart Contract Protected</span>
                     <span class="trust-badge">Revenue Transparency</span>
                     <span class="trust-badge">Automated Compliance</span>
+                    <span class="trust-badge">Zero Payment Disputes</span>
                 </div>
                 <div>
-                    <a href="#contact" class="btn">Secure Your Partnership</a>
-                    <a href="#blockchain" class="btn btn-outline">How We Protect Partners</a>
+                    <a href="contact.html" class="btn">Secure Your Partnership</a>
+                    <a href="#partner-selector" class="btn btn-outline">Explore Partner Options</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Type Selector -->
+    <section class="partner-selector" id="partner-selector">
+        <div class="container">
+            <div class="section-title">
+                <h2>Choose Your Partnership Path</h2>
+                <p>Select your role to explore tailored solutions and protection mechanisms</p>
+            </div>
+            <div class="selector-grid">
+                <div class="partner-card" onclick="window.location.href='partners.html#technology'">
+                    <div class="partner-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>DLE Technology Provider</h3>
+                    <p>Protect your IP and secure automated royalty payments through blockchain-encoded licensing agreements</p>
+                    <a href="partners.html#technology" class="btn btn-partner">Explore Solutions</a>
+                </div>
+                <div class="partner-card" onclick="window.location.href='partners.html#funding'">
+                    <div class="partner-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Funding Partner</h3>
+                    <p>Secure your investment with blockchain-transparent operations and smart contract-enforced returns</p>
+                    <a href="partners.html#funding" class="btn btn-partner">View Opportunities</a>
+                </div>
+                <div class="partner-card" onclick="window.location.href='partners.html#brine'">
+                    <div class="partner-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Brine Resource Supplier</h3>
+                    <p>Monetize your produced water with guaranteed revenue sharing and transparent operational tracking</p>
+                    <a href="partners.html#brine" class="btn btn-partner">Learn More</a>
                 </div>
             </div>
         </div>
@@ -1100,6 +1214,7 @@
                         <li>✓ Automatic profit distribution</li>
                         <li>✓ Milestone-based fund release</li>
                         <li>✓ Eliminates payment disputes</li>
+                        <li>✓ Transparent audit trails</li>
                     </ul>
                 </div>
                 
@@ -1113,6 +1228,7 @@
                         <li>✓ Real-time production tracking</li>
                         <li>✓ Transparent revenue flows</li>
                         <li>✓ Auditable compliance records</li>
+                        <li>✓ Live performance dashboards</li>
                     </ul>
                 </div>
                 
@@ -1126,6 +1242,7 @@
                         <li>✓ Automated license verification</li>
                         <li>✓ ESG requirement tracking</li>
                         <li>✓ Cross-border compliance</li>
+                        <li>✓ Real-time regulatory updates</li>
                     </ul>
                 </div>
             </div>
@@ -1147,7 +1264,7 @@
                     <h3>DLE Technology Sourcing with Blockchain Protection</h3>
                     <p>We identify and partner with leading Direct Lithium Extraction technology providers, securing IP and royalty streams through blockchain-encoded licensing agreements that guarantee automated, transparent payments.</p>
                     <div class="blockchain-badge">Smart Contract Protected</div>
-                    <a href="#" class="solution-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                    <a href="services.html#technology-sourcing" class="solution-link">Learn more <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="expertise-card fade-in">
                     <div class="expertise-icon">
@@ -1156,7 +1273,7 @@
                     <h3>Blockchain-Enabled Project De-risking</h3>
                     <p>Our comprehensive validation approach integrates blockchain verification for brine resources, technology performance, and economic viability, creating investor confidence through immutable data records.</p>
                     <div class="blockchain-badge">Data Integrity Guaranteed</div>
-                    <a href="#" class="solution-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                    <a href="services.html#project-derisking" class="solution-link">Learn more <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="expertise-card fade-in">
                     <div class="expertise-icon">
@@ -1165,7 +1282,7 @@
                     <h3>Smart Contract Partnership Structuring</h3>
                     <p>We design multi-party agreements with blockchain-enforced execution, ensuring technology providers receive guaranteed royalties and funding partners achieve protected returns through automated distribution.</p>
                     <div class="blockchain-badge">Automated Execution</div>
-                    <a href="#" class="solution-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                    <a href="services.html#partnership-structuring" class="solution-link">Learn more <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="expertise-card fade-in">
                     <div class="expertise-icon">
@@ -1174,7 +1291,7 @@
                     <h3>Blockchain-Verified Market Development</h3>
                     <p>Strategic expansion across West Africa using blockchain-transparent operations that provide real-time visibility into production, compliance, and revenue sharing for all stakeholders.</p>
                     <div class="blockchain-badge">Full Transparency</div>
-                    <a href="#" class="solution-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                    <a href="services.html#market-development" class="solution-link">Learn more <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -1185,4 +1302,338 @@
         <div class="container global-container">
             <div class="global-content">
                 <h2>Blockchain-Architected Supply Chains</h2>
-                <p>We serve as the Strategic Architect for a new generation of lithium production, leveraging blockchain technology to create transparent, enforceable partnerships that achieve up to 92% recovery from complex
+                <p>We serve as the Strategic Architect for a new generation of lithium production, leveraging blockchain technology to create transparent, enforceable partnerships that achieve up to 92% recovery from complex brines while eliminating traditional investment risks.</p>
+                <p>Our proprietary methodologies integrate deep regional expertise with advanced blockchain infrastructure to de-risk unconventional brine access and ensure ethical, formalized supply chains across Nigeria and West Africa.</p>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">92%</div>
+                        <div class="stat-label">Lithium Recovery</div>
+                        <div class="stat-desc">Proven DLE technology performance</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">96.5%</div>
+                        <div class="stat-label">Product Purity</div>
+                        <div class="stat-desc">Battery-grade lithium output</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Contract Enforcement</div>
+                        <div class="stat-desc">Smart contract automated execution</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Payment Disputes</div>
+                        <div class="stat-desc">With blockchain revenue tracking</div>
+                    </div>
+                </div>
+            </div>
+            <div class="global-image">
+                <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Advanced lithium extraction technology">
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions" id="solutions">
+        <div class="container">
+            <div class="section-title">
+                <h2>Strategic Blockchain Solutions</h2>
+                <p>Comprehensive approaches to lithium project development with built-in trust and transparency</p>
+            </div>
+            <div class="solutions-grid">
+                <div class="solution-card fade-in">
+                    <div class="solution-image">
+                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="DLE Technology">
+                    </div>
+                    <div class="solution-content">
+                        <h3>Blockchain-Secured DLE Integration</h3>
+                        <p>Seamlessly integrate proven DLE technologies with local brine resources, with every transaction and production milestone recorded on blockchain for complete transparency.</p>
+                        <div class="benefits">
+                            <span class="benefit-tag">Smart Contract Royalties</span>
+                            <span class="benefit-tag">IP Protection</span>
+                            <span class="benefit-tag">Automated Payments</span>
+                        </div>
+                        <a href="technology.html#dle-integration" class="solution-link">Explore solution <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="solution-card fade-in">
+                    <div class="solution-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1911&q=80" alt="Project financing">
+                    </div>
+                    <div class="solution-content">
+                        <h3>Smart Contract Project Financing</h3>
+                        <p>Develop bankable project structures with automated revenue distribution and protected returns through blockchain-enforced investment agreements.</p>
+                        <div class="benefits">
+                            <span class="benefit-tag">Capital Security</span>
+                            <span class="benefit-tag">Automated Returns</span>
+                            <span class="benefit-tag">Transparent Deployment</span>
+                        </div>
+                        <a href="commercial.html#financing" class="solution-link">Explore solution <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="solution-card fade-in">
+                    <div class="solution-image">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Brine assessment">
+                    </div>
+                    <div class="solution-content">
+                        <h3>Verified Brine Resource Assessment</h3>
+                        <p>Comprehensive evaluation of produced water and aquifer brines with immutable recording of assay results and resource estimates on blockchain.</p>
+                        <div class="benefits">
+                            <span class="benefit-tag">Immutable Records</span>
+                            <span class="benefit-tag">Transparent Data</span>
+                            <span class="benefit-tag">Verified Resources</span>
+                        </div>
+                        <a href="services.html#brine-assessment" class="solution-link">Explore solution <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="solution-card fade-in">
+                    <div class="solution-image">
+                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Regulatory compliance">
+                    </div>
+                    <div class="solution-content">
+                        <h3>Blockchain Regulatory Compliance</h3>
+                        <p>Navigate complex regulatory environments with automated compliance tracking and immutable record-keeping for licenses, permits, and ESG requirements.</p>
+                        <div class="benefits">
+                            <span class="benefit-tag">Automated Compliance</span>
+                            <span class="benefit-tag">ESG Tracking</span>
+                            <span class="benefit-tag">Audit Trail</span>
+                        </div>
+                        <a href="services.html#compliance" class="solution-link">Explore solution <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h2>Connect With Our Lithium Experts</h2>
+                <p>Our team is ready to discuss your lithium project requirements, whether you're a technology provider, funding partner, or brine resource holder.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Headquarters</h4>
+                            <p>15833 Mill Creek Blvd #13352<br>Mill Creek, WA, 98012</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p>253-480-5334</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p>info@gigahashgroup.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-container fade-in">
+                <form id="leadForm" action="https://formspree.io/f/xldolbqa" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company Name *</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="partner-type">I am a:</label>
+                        <select id="partner-type" name="partner-type">
+                            <option value="">Select partner type</option>
+                            <option value="technology-provider">DLE Technology Provider</option>
+                            <option value="funding-partner">Funding/Investment Partner</option>
+                            <option value="brine-supplier">Brine Resource Supplier</option>
+                            <option value="operator">Project Operator</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="concern">Primary Protection Concern</label>
+                        <select id="concern" name="concern">
+                            <option value="">Select your main concern</option>
+                            <option value="revenue-protection">Revenue Sharing Enforcement</option>
+                            <option value="ip-protection">Intellectual Property Protection</option>
+                            <option value="compliance">Regulatory Compliance Verification</option>
+                            <option value="transparency">Operational Transparency</option>
+                            <option value="payment-security">Payment Security & Timing</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">How can we help? *</label>
+                        <textarea id="message" name="message" placeholder="Please describe your project, resources, or partnership interest..." required></textarea>
+                    </div>
+                    <input type="hidden" name="_subject" value="New Lithium Project Inquiry from Gigahash Global Website">
+                    <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+                    <button type="submit" class="btn">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <div class="logo-icon">G</div>
+                        Gigahash Global
+                    </div>
+                    <p>Strategic consultants bridging DLE technology, capital, and brine resources to create ethical, sustainable lithium supply chains across Africa with blockchain protection.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#technology-sourcing">DLE Technology Sourcing</a></li>
+                        <li><a href="services.html#project-derisking">Project De-risking</a></li>
+                        <li><a href="services.html#brine-assessment">Brine Assessment</a></li>
+                        <li><a href="services.html#compliance">Regulatory Compliance</a></li>
+                        <li><a href="services.html#market-development">Market Development</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="technology.html">Technology Overview</a></li>
+                        <li><a href="commercial.html">Commercial Terms</a></li>
+                        <li><a href="implementation.html">Implementation Roadmap</a></li>
+                        <li><a href="partners.html">Partner Programs</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Approach</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Insights</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Gigahash Global LLC. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(13, 35, 68, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 30px rgba(13, 35, 68, 0.08)';
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const elementsToAnimate = document.querySelectorAll('.expertise-card, .solution-card, .form-container');
+            elementsToAnimate.forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // Form submission handling
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const formData = new FormData(this);
+            
+            // In a real implementation, you would send this data to your server
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = this.querySelector('[name="_next"]').value;
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was a problem submitting your form. Please try again.');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Partner card click handlers
+        document.querySelectorAll('.partner-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const link = this.querySelector('a');
+                if (link) {
+                    window.location.href = link.href;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

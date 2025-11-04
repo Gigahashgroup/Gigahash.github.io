@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gigahash Global - Implementation Roadmap</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 :root {
  --primary: #0d2344;
@@ -15,81 +16,271 @@
  --dark: #212529;
  --muted: #6c757d;
 }
-body {margin:0;font-family:'Inter', sans-serif;background:var(--light);color:var(--dark);} 
-header {background:var(--primary);color:white;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;}
-header .logo {font-weight:700;font-size:1.5rem;}
-nav a {color:white;margin:0 1rem;text-decoration:none;}
-.hero {padding:4rem 2rem;text-align:center;background:var(--primary);color:white;}
-.hero h1 {margin:0;font-size:2.5rem;}
-.section {padding:3rem 2rem;}
-.section h2 {text-align:center;font-size:2rem;margin-bottom:1rem;}
-.grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;}
-.card {background:white;border-radius:8px;padding:1.5rem;box-shadow:0 2px 4px rgba(0,0,0,0.1);}
-.card h3 {color:var(--primary);margin-top:0;}
-.card ul {padding-left:1rem;}
-footer {background:var(--primary);color:white;padding:2rem;text-align:center;}
-footer a {color:var(--secondary);margin:0 0.5rem;text-decoration:none;}
+body {margin:0;font-family:'Inter', sans-serif;background:var(--light);color:var(--dark);line-height:1.6;} 
+header {background:var(--primary);color:white;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;position:sticky;top:0;z-index:1000;}
+header .logo {font-weight:700;font-size:1.5rem;display:flex;align-items:center;gap:10px;}
+.logo-icon {width:30px;height:30px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:bold;}
+nav {display:flex;gap:1.5rem;flex-wrap:wrap;}
+nav a {color:white;text-decoration:none;font-weight:500;transition:color 0.3s;}
+nav a:hover {color:var(--secondary);}
+.hero {padding:4rem 2rem;text-align:center;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:white;}
+.hero h1 {margin:0 0 1rem 0;font-size:2.5rem;}
+.hero p {font-size:1.2rem;max-width:600px;margin:0 auto 2rem auto;opacity:0.9;}
+.trust-badges {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.trust-badge {background:rgba(255,255,255,0.2);padding:0.5rem 1rem;border-radius:20px;font-size:0.9rem;border:1px solid rgba(255,255,255,0.3);}
+.section {padding:3rem 2rem;max-width:1200px;margin:0 auto;}
+.section h2 {text-align:center;font-size:2rem;margin-bottom:3rem;color:var(--primary);position:relative;}
+.section h2:after {content:'';position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);width:60px;height:3px;background:var(--secondary);}
+.timeline {display:flex;flex-direction:column;gap:2rem;position:relative;margin:3rem 0;}
+.timeline:before {content:'';position:absolute;left:50%;transform:translateX(-50%);width:4px;height:100%;background:var(--secondary);}
+.phase {display:flex;align-items:center;gap:2rem;}
+.phase:nth-child(even) {flex-direction:row-reverse;}
+.phase-content {flex:1;background:white;border-radius:12px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,0.08);border-top:4px solid var(--secondary);}
+.phase-marker {width:60px;height:60px;background:var(--secondary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;font-size:1.2rem;flex-shrink:0;z-index:1;}
+.phase h3 {color:var(--primary);margin-top:0;font-size:1.5rem;display:flex;align-items:center;gap:0.5rem;}
+.phase-duration {background:var(--blockchain);color:white;padding:0.3rem 0.8rem;border-radius:15px;font-size:0.8rem;font-weight:600;margin-left:auto;}
+.phase-features {display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.5rem 0;}
+.feature-card {background:var(--light);padding:1rem;border-radius:8px;border-left:3px solid var(--blockchain);}
+.feature-card h4 {margin:0 0 0.5rem 0;color:var(--primary);font-size:0.9rem;}
+.feature-card p {margin:0;font-size:0.8rem;color:var(--muted);}
+.blockchain-highlight {background:rgba(41,98,255,0.1);border-left:4px solid var(--blockchain);padding:1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0;}
+.guarantees-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-top:2rem;}
+.guarantee-card {background:white;border-radius:12px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,0.08);text-align:center;border-top:4px solid var(--secondary);}
+.guarantee-icon {font-size:3rem;color:var(--secondary);margin-bottom:1rem;}
+.guarantee-metric {font-size:2.5rem;font-weight:bold;color:var(--primary);margin:0.5rem 0;}
+.guarantee-label {color:var(--muted);font-size:0.9rem;}
+.cta-button {display:inline-block;color:white;background:var(--secondary);padding:0.8rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:600;transition:all 0.3s;border:none;cursor:pointer;margin-top:1rem;}
+.cta-button:hover {background:var(--primary);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.15);}
+footer {background:var(--primary);color:white;padding:3rem 2rem;text-align:center;}
+footer a {color:var(--secondary);margin:0 0.5rem;text-decoration:none;transition:color 0.3s;}
+footer a:hover {color:white;}
+.footer-content {max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;text-align:left;}
+.footer-logo {font-size:1.5rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:10px;}
+.footer-links h4 {margin-bottom:1rem;color:var(--secondary);}
+.footer-links ul {list-style:none;padding:0;}
+.footer-links li {margin-bottom:0.5rem;}
+.footer-bottom {margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);}
+@media (max-width:768px) {
+ .footer-content {grid-template-columns:1fr;text-align:center;}
+ nav {justify-content:center;margin-top:1rem;}
+ header {flex-direction:column;}
+ .hero h1 {font-size:2rem;}
+ .section {padding:2rem 1rem;}
+ .timeline:before {left:30px;}
+ .phase {flex-direction:row!important;}
+ .phase-content {margin-left:4rem;}
+ .phase-marker {position:absolute;left:0;}
+}
 </style>
 </head>
 <body>
 <header>
-<div class="logo">Gigahash Global</div>
+<div class="logo">
+ <div class="logo-icon">G</div>
+ Gigahash Global
+</div>
 <nav>
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="technology.html">Technology</a>
-<a href="partners.html">Partners</a>
-<a href="commercial.html">Commercial</a>
-<a href="implementation.html">Implementation</a>
-<a href="contact.html">Contact</a>
+ <a href="index.html">Home</a>
+ <a href="services.html">Services</a>
+ <a href="technology.html">Technology</a>
+ <a href="partners.html">Partners</a>
+ <a href="commercial.html">Commercial</a>
+ <a href="implementation.html">Implementation</a>
+ <a href="contact.html">Contact</a>
 </nav>
 </header>
+
 <section class="hero">
-<h1>Implementation Roadmap</h1>
-<p>See how we bring projects from concept to production with clear phases and milestones.</p>
+ <h1>Implementation Roadmap</h1>
+ <p>From brine assessment to commercial production - our phased approach ensures success at every milestone</p>
+ <div class="trust-badges">
+  <span class="trust-badge">Blockchain-Secured</span>
+  <span class="trust-badge">Proven Technology</span>
+  <span class="trust-badge">Transparent Milestones</span>
+ </div>
 </section>
+
 <section class="section">
-<h2>Project Phases</h2>
-<div class="grid">
-<div class="card">
-<h3>Phase 1 (6-12 Months)</h3>
-<ul>
-<li>Scoping & feasibility studies</li>
-<li>Technology selection & pilot design</li>
-<li>Initial permitting</li>
-<li>Resource allocation & team formation</li>
-</ul>
-</div>
-<div class="card">
-<h3>Phase 2 (12-24 Months)</h3>
-<ul>
-<li>Pilot deployment & testing</li>
-<li>Optimization & scale-up planning</li>
-<li>Stakeholder onboarding</li>
-<li>Compliance & risk assessments</li>
-</ul>
-</div>
-<div class="card">
-<h3>Phase 3 (24+ Months)</h3>
-<ul>
-<li>Full-scale implementation</li>
-<li>Continuous monitoring & improvement</li>
-<li>Performance guarantees & audits</li>
-<li>Expansion & new opportunities</li>
-</ul>
-</div>
-</div>
+ <h2>Project Implementation Timeline</h2>
+ <div class="timeline">
+  
+  <div class="phase">
+   <div class="phase-marker">1</div>
+   <div class="phase-content">
+    <h3>Phase 1: Project Initiation <span class="phase-duration">Months 1-3</span></h3>
+    <p>Comprehensive project scoping and resource validation to establish technical and commercial viability.</p>
+    
+    <div class="phase-features">
+     <div class="feature-card">
+      <h4>Brine Resource Assessment</h4>
+      <p>Geochemical analysis of produced water samples for lithium concentration >200ppm</p>
+     </div>
+     <div class="feature-card">
+      <h4>Technology Partner Selection</h4>
+      <p>DLE technology evaluation and partnership agreements</p>
+     </div>
+     <div class="feature-card">
+      <h4>Preliminary Funding</h4>
+      <p>Initial investment commitments and term sheet execution</p>
+     </div>
+     <div class="feature-card">
+      <h4>Regulatory Permitting</h4>
+      <p>Nigerian mining license and environmental permit applications</p>
+     </div>
+    </div>
+    
+    <div class="blockchain-highlight">
+     <strong>Blockchain Integration:</strong> All assay results and partnership agreements recorded on immutable ledger for transparency and dispute prevention.
+    </div>
+   </div>
+  </div>
+
+  <div class="phase">
+   <div class="phase-marker">2</div>
+   <div class="phase-content">
+    <h3>Phase 2: Pilot Deployment <span class="phase-duration">Months 4-9</span></h3>
+    <p>Technology validation and performance optimization through controlled pilot operations.</p>
+    
+    <div class="phase-features">
+     <div class="feature-card">
+      <h4>Containerized DLE Installation</h4>
+      <p>Deploy modular DLE units at selected brine source locations</p>
+     </div>
+     <div class="feature-card">
+      <h4>90-Day Performance Validation</h4>
+      <p>Monitor recovery rates, purity levels, and operational efficiency</p>
+     </div>
+     <div class="feature-card">
+      <h4>Smart Contract Development</h4>
+      <p>Code and test automated royalty and revenue distribution</p>
+     </div>
+     <div class="feature-card">
+      <h4>Off-take Agreement Negotiation</h4>
+      <p>Secure lithium purchase agreements with battery manufacturers</p>
+     </div>
+    </div>
+    
+    <div class="blockchain-highlight">
+     <strong>Blockchain Integration:</strong> Real-time production data feeds smart contracts for automated royalty payments to technology partners.
+    </div>
+   </div>
+  </div>
+
+  <div class="phase">
+   <div class="phase-marker">3</div>
+   <div class="phase-content">
+    <h3>Phase 3: Commercial Scale <span class="phase-duration">Months 10-18</span></h3>
+    <p>Full-scale operations with continuous optimization and revenue generation.</p>
+    
+    <div class="phase-features">
+     <div class="feature-card">
+      <h4>Full Plant Construction</h4>
+      <p>Build permanent DLE facility based on pilot performance data</p>
+     </div>
+     <div class="feature-card">
+      <h4>Blockchain System Deployment</h4>
+      <p>Implement full smart contract ecosystem for all partnerships</p>
+     </div>
+     <div class="feature-card">
+      <h4>Operations Team Training</h4>
+      <p>Local workforce development and knowledge transfer</p>
+     </div>
+     <div class="feature-card">
+      <h4>Revenue Generation</h4>
+      <p>Begin commercial lithium production and distribution</p>
+     </div>
+    </div>
+    
+    <div class="blockchain-highlight">
+     <strong>Blockchain Integration:</strong> Complete transparency in revenue distribution with automated payments to all partners based on verified production data.
+    </div>
+   </div>
+  </div>
+
+ </div>
 </section>
+
 <section class="section">
-<h2>Performance Guarantees</h2>
-<p>We stand behind our technology with contractual guarantees on recovery rates, contract enforcement and sustainable practices.</p>
+ <h2>Performance Guarantees & Success Metrics</h2>
+ <p>We stand behind our technology and processes with contractual guarantees on recovery rates, contract enforcement, and sustainable practices.</p>
+ 
+ <div class="guarantees-grid">
+  <div class="guarantee-card">
+   <div class="guarantee-icon">
+    <i class="fas fa-bolt"></i>
+   </div>
+   <div class="guarantee-metric">92%</div>
+   <div class="guarantee-label">Lithium Recovery Rate</div>
+   <p>Minimum end-to-end lithium extraction efficiency from brine sources</p>
+  </div>
+  
+  <div class="guarantee-card">
+   <div class="guarantee-icon">
+    <i class="fas fa-gem"></i>
+   </div>
+   <div class="guarantee-metric">96.5%</div>
+   <div class="guarantee-label">Product Purity</div>
+   <p>Battery-grade lithium carbonate meeting industry standards</p>
+  </div>
+  
+  <div class="guarantee-card">
+   <div class="guarantee-icon">
+    <i class="fas fa-file-contract"></i>
+   </div>
+   <div class="guarantee-metric">100%</div>
+   <div class="guarantee-label">Contract Enforcement</div>
+   <p>Smart contract automated execution of all partnership terms</p>
+  </div>
+  
+  <div class="guarantee-card">
+   <div class="guarantee-icon">
+    <i class="fas fa-shield-alt"></i>
+   </div>
+   <div class="guarantee-metric">0</div>
+   <div class="guarantee-label">Payment Disputes</div>
+   <p>With blockchain-transparent revenue sharing and automated distributions</p>
+  </div>
+ </div>
+ 
+ <div style="text-align:center;margin-top:3rem;">
+  <a href="contact.html" class="cta-button">Start Your Project Timeline</a>
+ </div>
 </section>
+
 <footer>
-<p>&copy; 2025 Gigahash Global. All rights reserved.</p>
-<div>
-<a href="privacy.html">Privacy</a>
-<a href="terms.html">Terms</a>
-</div>
+ <div class="footer-content">
+  <div>
+   <div class="footer-logo">
+    <div class="logo-icon">G</div>
+    Gigahash Global
+   </div>
+   <p>Strategic consultants bridging DLE technology, capital, and brine resources to create ethical, sustainable lithium supply chains across Africa.</p>
+  </div>
+  <div class="footer-links">
+   <h4>Quick Links</h4>
+   <ul>
+    <li><a href="services.html">Our Services</a></li>
+    <li><a href="technology.html">Technology</a></li>
+    <li><a href="commercial.html">Commercial Terms</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+   </ul>
+  </div>
+  <div class="footer-links">
+   <h4>Partner With Us</h4>
+   <ul>
+    <li><a href="partners.html?partner=technology">Technology Providers</a></li>
+    <li><a href="partners.html?partner=funding">Funding Partners</a></li>
+    <li><a href="partners.html?partner=supplier">Brine Suppliers</a></li>
+   </ul>
+  </div>
+ </div>
+ <div class="footer-bottom">
+  <p>&copy; 2025 Gigahash Global. All rights reserved.</p>
+  <div>
+   <a href="privacy.html">Privacy Policy</a>
+   <a href="terms.html">Terms of Service</a>
+  </div>
+ </div>
 </footer>
 </body>
 </html>

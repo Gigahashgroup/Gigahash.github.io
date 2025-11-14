@@ -1,228 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Technology | Gigahash Global</title>
-<meta name="description" content="Explore our DLE performance specifications — 92% lithium recovery, 96.5% battery-grade lithium carbonate purity, 3.5M liters of brine processed in over 300 operational hours and <5 ppm Ca/Mg — and discover how our blockchain architecture automates royalty distributions, records immutable production data, secures funds with multi-signature wallets and provides transparent revenue sharing.">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --primary: #0d2344;
-  --primary-light: #1a3a6e;
-  --secondary: #00a896;
-  --blockchain-blue: #2962FF;
-  --trust-green: #00C853;
-  --accent: #e31937;
-  --light: #f8f9fa;
-  --dark: #212529;
-  --gray: #6c757d;
-  --light-gray: #e9ecef;
-  --transition: all 0.3s ease;
-}
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter','Helvetica Neue',Arial,sans-serif; }
-body { color:var(--dark); line-height:1.7; overflow-x:hidden; font-weight:400; background: var(--light); }
-.container { max-width:1280px; margin:0 auto; padding:0 20px; }
-header { background: rgba(255,255,255,0.95); backdrop-filter:blur(10px); box-shadow:0 2px 30px rgba(13,35,68,0.08); position:fixed; top:0; left:0; right:0; z-index:1000; }
-.header-container{ display:flex; justify-content:space-between; align-items:center; padding:18px 0; }
-.logo { display:flex; align-items:center; gap:12px; }
-.logo-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--primary),var(--blockchain-blue));border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;}
-.logo-text{font-size:22px;font-weight:700;color:var(--primary);}
-nav ul{display:flex; list-style:none; gap:30px;}
-nav a{ text-decoration:none;color:var(--primary);font-weight:500;font-size:15px; position:relative;padding:8px 0; transition: var(--transition);}
-nav a:hover{color:var(--blockchain-blue);}
-nav a::after{content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--blockchain-blue); transition: var(--transition);}
-nav a:hover::after{ width:100%; }
-.nav-cta{ background:var(--blockchain-blue);color:#fff;padding:10px 24px;border-radius:6px;transition:var(--transition); }
-.nav-cta:hover{ background:var(--primary); transform:translateY(-2px); box-shadow:0 5px 15px rgba(41,98,255,0.3); }
-main { padding-top:120px; }
-.hero { background:linear-gradient(135deg,rgba(13,35,68,0.85),rgba(13,35,68,0.7)), url('https://images.unsplash.com/photo-1604491955480-35559d050a30?auto=format&fit=crop&w=2070&q=80'); background-size:cover; background-position:center; color:#fff; padding:150px 0 100px; text-align:center; }
-.hero h1 { font-size:3rem; margin-bottom:20px; font-weight:700; }
-.hero p { font-size:1.2rem; max-width:700px; margin:0 auto 30px; opacity:0.9; }
-.section { padding:100px 0; }
-.section h2 { font-size:2.4rem; color:var(--primary); margin-bottom:20px; text-align:center; position:relative; display:inline-block; }
-.section h2::after { content:''; position:absolute; bottom:-10px; left:50%; transform:translateX(-50%); width:80px; height:4px; background:var(--blockchain-blue); border-radius:2px; }
-.section p { max-width:800px; margin:0 auto 40px; color:var(--gray); text-align:center; font-size:1.1rem; }
-.spec-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:30px; margin-top:40px; }
-.spec-card { background:#fff; border-radius:12px; padding:35px 30px; box-shadow:0 8px 25px rgba(0,0,0,0.06); border-top:4px solid var(--blockchain-blue); transition:var(--transition); }
-.spec-card h3 { font-size:1.4rem; margin-bottom:12px; color:var(--primary); font-weight:600; }
-.spec-card p { color:var(--gray); font-size:0.95rem; margin-bottom:15px; }
-.pre-code { background:var(--light-gray); padding:20px; border-radius:8px; font-family:monospace; font-size:0.9rem; overflow-x:auto; }
-footer { background:var(--primary); color:#fff; padding:60px 0 20px; margin-top:60px; }
-.footer-container { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; }
-.footer-logo { font-size:22px; font-weight:700; margin-bottom:20px; display:flex; align-items:center; gap:10px; }
-.footer-about p { opacity:0.7; margin-bottom:20px; line-height:1.6; font-weight:300; }
-.social-links { display:flex; gap:12px; }
-.social-icon { width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; color:#fff; transition:var(--transition); }
-.social-icon:hover { background:var(--blockchain-blue); transform:translateY(-4px); }
-.footer-links h3 { font-size:1.2rem; margin-bottom:20px; position:relative; font-weight:600; }
-.footer-links h3::after { content:''; position:absolute; bottom:-10px; left:0; width:40px; height:3px; background:var(--blockchain-blue); border-radius:2px; }
-.footer-links ul { list-style:none; }
-.footer-links li { margin-bottom:12px; }
-.footer-links a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.9rem; transition:var(--transition); }
-.footer-links a:hover { color:#fff; padding-left:6px; }
-.copyright { text-align:center; border-top:1px solid rgba(255,255,255,0.1); margin-top:40px; padding-top:30px; font-size:0.85rem; opacity:0.7; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gigahash Global | Technology & Integration</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    @import url('index.html'); /* again reuse root variables */
+    main{padding-top:120px;}
+    h1{text-align:center;margin-bottom:40px;color:var(--primary);}
+    .section{margin-bottom:60px;}
+    .section h2{font-size:1.8rem;margin-bottom:15px;color:var(--primary);}
+    .section p{margin-bottom:12px;color:var(--gray);}
+    .stats{display:flex;flex-wrap:wrap;gap:30px;margin-top:20px;}
+    .stat-card{flex:1 1 250px;background:#fff;border-radius:10px;padding:20px;box-shadow:0 5px 15px rgba(0,0,0,.05);text-align:center;}
+    .stat-card h3{font-size:2rem;color:var(--blockchain-blue);margin-bottom:8px;}
+    .stat-card span{color:var(--gray);}
+    .cta{text-align:center;margin-top:40px;}
+    .cta a{background:var(--blockchain-blue);color:#fff;padding:12px 30px;border-radius:6px;transition:var(--transition);}
+    .cta a:hover{background:var(--primary);}
+  </style>
 </head>
 <body>
-<header>
-  <div class="container header-container">
-    <div class="logo">
-      <div class="logo-icon">G</div>
-      <div class="logo-text">Gigahash Global</div>
+  <header>
+    <div class="header-container">
+      <div class="logo"><span class="logo-text">Gigahash Global</span></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="partners.html">Partners</a></li>
+          <li><a href="commercial.html">Commercial</a></li>
+          <li><a href="implementation.html">Implementation</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="technology.html">Technology</a></li>
-        <li><a href="partners.html">Partners</a></li>
-        <li><a href="commercial.html">Commercial</a></li>
-        <li><a href="implementation.html">Implementation</a></li>
-        <li><a href="contact.html" class="nav-cta">Get Started</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-<main>
-<section class="hero">
-  <div class="container">
-    <h1>Technology &amp; Architecture</h1>
-    <p>Dive into our DLE performance data and blockchain stack powering secure lithium development.</p>
-  </div>
-</section>
+  </header>
+  <main class="container">
+    <h1>Technology & Integration</h1>
 
-<section class="section" id="dle-specs">
-  <h2>DLE Performance Specifications</h2>
-  <p>Our direct lithium extraction systems deliver industry-leading recovery rates while minimizing environmental impact.</p>
-  <div class="container spec-grid">
-    <div class="spec-card">
-      <h3>DLE Performance Specifications</h3>
-      <ul>
-        <li><strong>Recovery Rate:</strong> 92% end-to-end lithium extraction</li>
-        <li><strong>Product Purity:</strong> 96.5% battery-grade lithium carbonate</li>
-        <li><strong>Throughput:</strong> 3.5M liters brine processed in 300+ operational hours</li>
-        <li><strong>Calcium/Magnesium Removal:</strong> &lt;5ppm detection limit</li>
-      </ul>
+    <div class="section">
+      <h2>DLE Integration</h2>
+      <p>We work with modular, high‑recovery direct lithium extraction systems that deliver >92 % lithium recovery rates from complex brine chemistries. Our integration process assesses brine composition, temperature and flow to configure adsorption, solvent‑extraction or ion‑exchange modules for optimal performance.</p>
+      <p>Once selected, we oversee pilot trials, evaluate reagent regeneration and ensure compatibility with downstream crystallisation or conversion circuits.</p>
     </div>
-  </div>
-</section>
 
-<section class="section" id="blockchain-arch">
-  <h2>Blockchain Security Features</h2>
-  <p>Our platform is built on a permissioned blockchain using smart contracts and oracle integrations to enforce trust.</p>
-  <div class="container spec-grid">
-    <div class="spec-card">
-      <h3>Blockchain Security Features</h3>
-      <ul>
-        <li>Smart contract-automated royalty distributions</li>
-        <li>Immutable production data recording</li>
-        <li>Multi-signature wallet security for fund releases</li>
-        <li>Transparent revenue sharing visible to all partners</li>
-      </ul>
+    <div class="section">
+      <h2>Smart Contract Enforcement</h2>
+      <p>All project agreements are encoded into smart contracts on a secure blockchain. These digital agreements automatically execute fund draws, milestone payments and revenue distribution based on pre‑defined triggers such as production volumes or pricing benchmarks.</p>
+      <p>This eliminates manual reconciliation and reduces counterparty risk while providing immutable audit trails for all stakeholders.</p>
     </div>
-  </div>
-</section>
 
-<section class="section" id="contracts">
-  <h2>Smart Contract Example</h2>
-  <p>A simplified pseudo-code example of a royalty distribution contract for demonstration purposes:</p>
-  <div class="container">
-    <pre class="pre-code">
-function distributeRoyalties(uint256 revenue) public {
-    uint256 techShare = revenue * 30 / 100; // 30% to technology provider
-    uint256 fundingShare = revenue * 50 / 100; // 50% to funding partner
-    uint256 supplierShare = revenue * 20 / 100; // 20% to brine supplier
-    send(techProvider, techShare);
-    send(fundingPartner, fundingShare);
-    send(supplier, supplierShare);
-}
-    </pre>
-  </div>
-</section>
+    <div class="section">
+      <h2>Immutable Transparency</h2>
+      <p>Our platform leverages blockchain’s immutable ledger to record production data, ESG metrics and financial transactions. Each brine batch, extraction run and shipment can be traced from source to end‑use, enabling transparent reporting to regulators, investors and offtakers.</p>
+      <p>Immutable records build trust among partners and unlock access to tokenised financing instruments.</p>
+    </div>
 
-<section class="section" id="security">
-  <h2>Security &amp; Compliance</h2>
-  <p>We adhere to industry-best practices in cybersecurity, data privacy and regulatory compliance.</p>
-  <div class="container spec-grid">
-    <div class="spec-card">
-      <h3>Encryption</h3>
-      <p>End-to-end encryption for data in transit and at rest protects proprietary information.</p>
+    <div class="section">
+      <h2>ESG & Compliance Mechanics</h2>
+      <p>We encode environmental and social governance metrics into smart contracts, ensuring adherence to local and international standards. Emission intensity, water consumption and community impact indicators can be linked to financing terms, incentivising sustainable operation.</p>
+      <p>Compliance reports are available in real time to investors and regulators, demonstrating responsible resource development.</p>
     </div>
-    <div class="spec-card">
-      <h3>Access Control</h3>
-      <p>Role-based permissions ensure that only authorized parties can view or modify data.</p>
-    </div>
-    <div class="spec-card">
-      <h3>Auditability</h3>
-      <p>Immutable ledger provides full audit trails for transactions and regulatory reporting.</p>
-    </div>
-  </div>
-</section>
 
-<section class="section" id="integration">
-  <h2>Integration Process</h2>
-  <p>Our technology integrates with existing infrastructure through modular APIs and data adapters.</p>
-  <div class="container spec-grid">
-    <div class="spec-card">
-      <h3>Assessment</h3>
-      <p>We evaluate your current systems and data flows to design integration points.</p>
+    <div class="section">
+      <h2>Blockchain Architecture Overview</h2>
+      <p>The Gigahash platform runs on a permissioned blockchain with layer‑2 scalability. Smart contracts are deployed using audited templates, while oracles feed external data such as price indexes and production sensors. Role‑based access controls ensure data confidentiality among partners.</p>
     </div>
-    <div class="spec-card">
-      <h3>Deployment</h3>
-      <p>Plug-in modules connect DLE plants, ERP systems and finance platforms to the blockchain.</p>
-    </div>
-    <div class="spec-card">
-      <h3>Validation</h3>
-      <p>We verify data integrity and contract execution across all integrated components.</p>
-    </div>
-  </div>
-</section>
-</main>
 
-<footer>
-  <div class="container footer-container">
-    <div>
-      <div class="footer-logo">
-        <div class="logo-icon">G</div>
-        <div class="logo-text">Gigahash Global</div>
-      </div>
-      <div class="footer-about">
-        <p>Strategic consultancy bridging DLE technology, capital and brine resources across Africa through blockchain-secured partnerships.</p>
-      </div>
-      <div class="social-links">
-        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+    <div class="section">
+      <h2>Performance Statistics</h2>
+      <div class="stats">
+        <div class="stat-card">
+          <h3>92 %</h3>
+          <span>Average lithium recovery</span>
+        </div>
+        <div class="stat-card">
+          <h3>96.5 %</h3>
+          <span>Product purity</span>
+        </div>
+        <div class="stat-card">
+          <h3>100 %</h3>
+          <span>Smart contract execution</span>
+        </div>
       </div>
     </div>
-    <div class="footer-links">
-      <h3>Company</h3>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="technology.html">Technology</a></li>
-        <li><a href="partners.html">Partners</a></li>
-      </ul>
+
+    <div class="cta">
+      <a href="contact.html">Discuss Technology Requirements</a>
     </div>
-    <div class="footer-links">
-      <h3>Resources</h3>
-      <ul>
-        <li><a href="commercial.html">Commercial</a></li>
-        <li><a href="implementation.html">Implementation</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-links">
-      <h3>Legal</h3>
-      <ul>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Service</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="copyright">© 2025 Gigahash Global. All rights reserved.</div>
-</footer>
+  </main>
+  <footer>
+    <div class="container"><p>&copy; 2025 Gigahash Global. All rights reserved.</p></div>
+  </footer>
 </body>
 </html>

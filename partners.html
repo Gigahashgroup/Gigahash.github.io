@@ -1,216 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gigahash Global - Strategic Partners</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-:root {
- --primary: #0d2344;
- --secondary: #00a896;
- --blockchain: #2962FF;
- --accent: #e31937;
- --light: #f8f9fa;
- --dark: #212529;
- --muted: #6c757d;
-}
-body {margin:0;font-family:'Inter', sans-serif;background:var(--light);color:var(--dark);line-height:1.6;} 
-header {background:var(--primary);color:white;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;position:sticky;top:0;z-index:1000;}
-header .logo {font-weight:700;font-size:1.5rem;display:flex;align-items:center;gap:10px;}
-.logo-icon {width:30px;height:30px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:bold;}
-nav {display:flex;gap:1.5rem;flex-wrap:wrap;}
-nav a {color:white;text-decoration:none;font-weight:500;transition:color 0.3s;}
-nav a:hover {color:var(--secondary);}
-.hero {padding:4rem 2rem;text-align:center;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:white;}
-.hero h1 {margin:0 0 1rem 0;font-size:2.5rem;}
-.hero p {font-size:1.2rem;max-width:600px;margin:0 auto 2rem auto;opacity:0.9;}
-.trust-badges {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-.trust-badge {background:rgba(255,255,255,0.2);padding:0.5rem 1rem;border-radius:20px;font-size:0.9rem;border:1px solid rgba(255,255,255,0.3);}
-.section {padding:3rem 2rem;max-width:1200px;margin:0 auto;}
-.section h2 {text-align:center;font-size:2rem;margin-bottom:3rem;color:var(--primary);position:relative;}
-.section h2:after {content:'';position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);width:60px;height:3px;background:var(--secondary);}
-.partner-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;}
-.partner-card {background:white;border-radius:12px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,0.08);transition:transform 0.3s, box-shadow 0.3s;border-top:4px solid var(--secondary);position:relative;overflow:hidden;}
-.partner-card:hover {transform:translateY(-5px);box-shadow:0 8px 30px rgba(0,0,0,0.12);}
-.partner-card h3 {color:var(--primary);margin-top:0;font-size:1.5rem;}
-.partner-icon {font-size:2.5rem;color:var(--secondary);margin-bottom:1rem;}
-.partner-card ul {padding-left:1.2rem;margin-bottom:2rem;}
-.partner-card li {margin-bottom:0.8rem;position:relative;}
-.partner-card li:before {content:"✓";color:var(--secondary);font-weight:bold;position:absolute;left:-1.2rem;}
-.blockchain-badge {background:var(--blockchain);color:white;padding:0.4rem 1rem;border-radius:20px;font-size:0.8rem;font-weight:600;display:inline-block;margin-bottom:1rem;letter-spacing:0.5px;}
-.cta-button {display:inline-block;color:white;background:var(--secondary);padding:0.8rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:600;transition:all 0.3s;border:none;cursor:pointer;}
-.cta-button:hover {background:var(--primary);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.15);}
-.cta-secondary {background:var(--blockchain);}
-.partner-benefits {display:flex;flex-wrap:wrap;gap:0.8rem;margin:1.5rem 0;}
-.benefit-tag {background:rgba(41,98,255,0.1);color:var(--blockchain);padding:0.4rem 0.8rem;border-radius:12px;font-size:0.8rem;font-weight:500;}
-footer {background:var(--primary);color:white;padding:3rem 2rem;text-align:center;}
-footer a {color:var(--secondary);margin:0 0.5rem;text-decoration:none;transition:color 0.3s;}
-footer a:hover {color:white;}
-.footer-content {max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;text-align:left;}
-.footer-logo {font-size:1.5rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:10px;}
-.footer-links h4 {margin-bottom:1rem;color:var(--secondary);}
-.footer-links ul {list-style:none;padding:0;}
-.footer-links li {margin-bottom:0.5rem;}
-.footer-bottom {margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);}
-@media (max-width:768px) {
- .footer-content {grid-template-columns:1fr;text-align:center;}
- nav {justify-content:center;margin-top:1rem;}
- header {flex-direction:column;}
- .hero h1 {font-size:2rem;}
- .section {padding:2rem 1rem;}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gigahash Global | Partnership Opportunities</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    @import url('index.html');
+    main{padding-top:120px;}
+    h1{text-align:center;margin-bottom:40px;color:var(--primary);}
+    .partner-category{margin-bottom:50px;}
+    .partner-category h2{font-size:1.8rem;margin-bottom:12px;color:var(--primary);}
+    .partner-category p{margin-bottom:12px;color:var(--gray);}
+    .partner-category ul{list-style:none;margin-left:0;color:var(--gray);}
+    .partner-category ul li{position:relative;padding-left:25px;margin-bottom:8px;}
+    .partner-category ul li::before{content:'\\2022';position:absolute;left:0;color:var(--blockchain-blue);}
+    .cta{text-align:center;margin-top:40px;}
+    .cta a{background:var(--blockchain-blue);color:#fff;padding:12px 30px;border-radius:6px;transition:var(--transition);}
+    .cta a:hover{background:var(--primary);}
+  </style>
 </head>
 <body>
-<header>
-<div class="logo">
- <div class="logo-icon">G</div>
- Gigahash Global
-</div>
-<nav>
- <a href="index.html">Home</a>
- <a href="services.html">Services</a>
- <a href="technology.html">Technology</a>
- <a href="partners.html">Partners</a>
- <a href="commercial.html">Commercial</a>
- <a href="implementation.html">Implementation</a>
- <a href="contact.html">Contact</a>
-</nav>
-</header>
+  <header>
+    <div class="header-container">
+      <div class="logo"><span class="logo-text">Gigahash Global</span></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="partners.html">Partners</a></li>
+          <li><a href="commercial.html">Commercial</a></li>
+          <li><a href="implementation.html">Implementation</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <h1>Partnership Opportunities</h1>
+    <p style="max-width:800px;margin:0 auto 40px;text-align:center;color:var(--gray);">Gigahash Global forms collaborative partnerships to unlock value across the lithium supply chain. We categorise partners to ensure clear protections and value propositions for each group.</p>
 
-<section class="hero">
- <h1>Strategic Partnership Opportunities</h1>
- <p>Join our blockchain-secured lithium ecosystem with tailored solutions for each partner type</p>
- <div class="trust-badges">
-  <span class="trust-badge">Smart Contract Protected</span>
-  <span class="trust-badge">Revenue Transparency</span>
-  <span class="trust-badge">Automated Compliance</span>
- </div>
-</section>
+    <div class="partner-category">
+      <h2>Technology Providers</h2>
+      <p>We partner with innovative DLE and processing technology companies seeking to commercialise their solutions in Africa. Through smart contracts, technology IP is protected, usage rights are clearly defined and royalty streams are automated.</p>
+      <ul>
+        <li><strong>Protection mechanisms:</strong> IP escrow on blockchain, milestone‑based licensing.</li>
+        <li><strong>Smart contract assurances:</strong> automated royalty payments, usage tracking.</li>
+        <li><strong>Partner gains:</strong> access to brine resources, accelerated adoption and transparent revenue sharing.</li>
+      </ul>
+    </div>
 
-<section class="section">
- <h2>For DLE Technology Providers</h2>
- <div class="partner-grid">
-  <div class="partner-card">
-   <div class="blockchain-badge">Blockchain Protected</div>
-   <div class="partner-icon">
-    <i class="fas fa-microchip"></i>
-   </div>
-   <h3>Your Technology, Protected & Monetized</h3>
-   <p>Deploy your DLE technology in Nigeria's vast brine resources with guaranteed IP protection and automated royalty payments.</p>
-   
-   <div class="partner-benefits">
-    <span class="benefit-tag">IP Protection</span>
-    <span class="benefit-tag">Automated Royalties</span>
-    <span class="benefit-tag">Zero Capex</span>
-    <span class="benefit-tag">Market Access</span>
-   </div>
-   
-   <ul>
-    <li><strong>Blockchain-encoded licensing</strong> prevents unauthorized technology use</li>
-    <li><strong>Smart contract royalties</strong> auto-pay 3-7% of lithium sales based on verified production</li>
-    <li><strong>Immediate deployment</strong> in Nigerian brine fields with proven >200ppm lithium concentrations</li>
-    <li><strong>We provide all funding</strong> and operational partners - you focus on technology</li>
-   </ul>
-   <a href="contact.html?partner=technology" class="cta-button">Protect Your IP</a>
-  </div>
- </div>
-</section>
+    <div class="partner-category">
+      <h2>Funding Partners</h2>
+      <p>Capital providers—including equity investors, lenders and royalty funds—participate in projects through tokenised financing instruments. Smart contracts govern capital deployment, drawdowns and repayment schedules tied to production metrics.</p>
+      <ul>
+        <li><strong>Protection mechanisms:</strong> escrowed funds, waterfall payment structures.</li>
+        <li><strong>Smart contract assurances:</strong> immutable record of investment terms and automated distributions.</li>
+        <li><strong>Partner gains:</strong> exposure to lithium projects with transparent risk controls and regular payouts.</li>
+      </ul>
+    </div>
 
-<section class="section">
- <h2>For Funding & Investment Partners</h2>
- <div class="partner-grid">
-  <div class="partner-card">
-   <div class="blockchain-badge">De-Risked Investment</div>
-   <div class="partner-icon">
-    <i class="fas fa-chart-line"></i>
-   </div>
-   <h3>Blockchain-Secured Lithium Investments</h3>
-   <p>Access de-risked lithium production opportunities with transparent operations and protected returns.</p>
-   
-   <div class="partner-benefits">
-    <span class="benefit-tag">Protected Returns</span>
-    <span class="benefit-tag">Transparent Ops</span>
-    <span class="benefit-tag">Proven Technology</span>
-    <span class="benefit-tag">Multiple Exits</span>
-   </div>
-   
-   <ul>
-    <li><strong>12-18% IRR preferred returns</strong> enforced through smart contracts</li>
-    <li><strong>Real-time production tracking</strong> and financial data on blockchain</li>
-    <li><strong>Proven DLE technology</strong> with 92% recovery rates validated by pilot data</li>
-    <li><strong>3-5 year ROI horizon</strong> with project acquisition and IPO exit options</li>
-   </ul>
-   <a href="commercial.html?partner=funding" class="cta-button cta-secondary">Explore Investment Terms</a>
-  </div>
- </div>
-</section>
+    <div class="partner-category">
+      <h2>Brine Resource Suppliers</h2>
+      <p>Resource owners contribute brine concessions in exchange for technology access and development capital. Our frameworks ensure their mineral rights are protected while unlocking value through joint ventures.</p>
+      <ul>
+        <li><strong>Protection mechanisms:</strong> title verification on chain, pre‑defined dilution terms.</li>
+        <li><strong>Smart contract assurances:</strong> clear participation percentages, automated revenue allocation.</li>
+        <li><strong>Partner gains:</strong> accelerated project development, technology transfer and transparent revenue share.</li>
+      </ul>
+    </div>
 
-<section class="section">
- <h2>For Brine Resource Suppliers</h2>
- <div class="partner-grid">
-  <div class="partner-card">
-   <div class="blockchain-badge">New Revenue Stream</div>
-   <div class="partner-icon">
-    <i class="fas fa-oil-well"></i>
-   </div>
-   <h3>Monetize Your Produced Water</h3>
-   <p>Transform your produced water from cost center to revenue stream with zero investment required.</p>
-   
-   <div class="partner-benefits">
-    <span class="benefit-tag">Zero Investment</span>
-    <span class="benefit-tag">Revenue Sharing</span>
-    <span class="benefit-tag">ESG Benefits</span>
-    <span class="benefit-tag">Compliance Ready</span>
-   </div>
-   
-   <ul>
-    <li><strong>20-30% profit participation</strong> in lithium sales from your brine</li>
-    <li><strong>We provide all capital and technology</strong> - no upfront investment required</li>
-    <li><strong>Transform environmental liability</strong> into green energy resource</li>
-    <li><strong>Full regulatory compliance</strong> and permitting handled by our team</li>
-   </ul>
-   <a href="implementation.html?partner=supplier" class="cta-button">See Implementation Roadmap</a>
-  </div>
- </div>
-</section>
-
-<footer>
- <div class="footer-content">
-  <div>
-   <div class="footer-logo">
-    <div class="logo-icon">G</div>
-    Gigahash Global
-   </div>
-   <p>Strategic consultants bridging DLE technology, capital, and brine resources to create ethical, sustainable lithium supply chains across Africa.</p>
-  </div>
-  <div class="footer-links">
-   <h4>Quick Links</h4>
-   <ul>
-    <li><a href="services.html">Our Services</a></li>
-    <li><a href="technology.html">Technology</a></li>
-    <li><a href="commercial.html">Commercial Terms</a></li>
-    <li><a href="contact.html">Contact Us</a></li>
-   </ul>
-  </div>
-  <div class="footer-links">
-   <h4>Partner With Us</h4>
-   <ul>
-    <li><a href="partners.html?partner=technology">Technology Providers</a></li>
-    <li><a href="partners.html?partner=funding">Funding Partners</a></li>
-    <li><a href="partners.html?partner=supplier">Brine Suppliers</a></li>
-   </ul>
-  </div>
- </div>
- <div class="footer-bottom">
-  <p>&copy; 2025 Gigahash Global. All rights reserved.</p>
-  <div>
-   <a href="privacy.html">Privacy Policy</a>
-   <a href="terms.html">Terms of Service</a>
-  </div>
- </div>
-</footer>
+    <div class="cta">
+      <a href="contact.html">Begin Partnership Qualification</a>
+    </div>
+  </main>
+  <footer>
+    <div class="container"><p>&copy; 2025 Gigahash Global. All rights reserved.</p></div>
+  </footer>
 </body>
 </html>

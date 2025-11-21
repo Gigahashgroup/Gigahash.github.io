@@ -4,14 +4,84 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gigahash Global | Implementation Roadmap</title>
+  <meta name="description" content="Step-by-step roadmap guiding lithium brine projects from evaluation through commissioning using integrated DLE and blockchain-enabled transparency.">
+
+  <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Shared Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css">
+  
+  <style>
+    /* Page-Specific Adjustments */
+
+    .hero-small {
+      background: linear-gradient(135deg, rgba(13,35,68,.85), rgba(13,35,68,.7)),
+                  url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    .hero-small h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .hero-small p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* Timeline layout without the green vertical line */
+    .timeline {
+      max-width: 900px;
+      margin: 60px auto;
+    }
+
+    .phase {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    .phase h2 {
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .phase ul {
+      list-style: none;
+      padding: 0;
+      color: var(--gray);
+    }
+
+    .phase ul li::before {
+      content: "•";
+      margin-right: 6px;
+      color: var(--blockchain-blue);
+      font-weight: bold;
+    }
+  </style>
 </head>
+
 <body>
+
+  <!-- Header -->
   <header>
     <div class="header-container">
-      <div class="logo"><span class="logo-text">Gigahash Global</span></div>
+      <div class="logo">
+        <span class="logo-text">Gigahash Global</span>
+      </div>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -25,33 +95,73 @@
       </nav>
     </div>
   </header>
-  <main class="container">
-    <h1 class="page-title">Implementation Roadmap</h1>
-    <div class="timeline">
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero-small">
+      <h1>Implementation Roadmap</h1>
+      <p>From brine assessment to commercial production — our phased approach ensures success at every milestone.</p>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section class="timeline">
+      
       <div class="phase">
-        <h2>Phase 1: Brine Evaluation</h2>
-        <p>Collect and analyse brine samples, conduct reservoir modelling and assess infrastructure to determine resource quality and development potential.</p>
+        <h2>Phase 1: Brine Evaluation</h2>
+        <ul>
+          <li>Sample collection & brine chemistry analysis</li>
+          <li>Reservoir modeling & hydrogeological review</li>
+          <li>Infrastructure & logistics assessment</li>
+          <li>Feasibility determination for DLE integration</li>
+        </ul>
       </div>
+
       <div class="phase">
-        <h2>Phase 2: DLE Integration Pilot</h2>
-        <p>Select suitable direct lithium extraction technologies and perform pilot‑scale tests to validate recovery rates, reagent consumption and scalability.</p>
+        <h2>Phase 2: DLE Technology Matching</h2>
+        <ul>
+          <li>Identify most efficient DLE providers</li>
+          <li>Bench-scale testing & compatibility studies</li>
+          <li>Tech-economic performance evaluation</li>
+        </ul>
       </div>
+
       <div class="phase">
-        <h2>Phase 3: Smart Contract Structuring</h2>
-        <p>Define partnership terms, investment structures and revenue distribution, then encode them into audited smart contracts on blockchain.</p>
+        <h2>Phase 3: Pilot Deployment</h2>
+        <ul>
+          <li>Pilot skid installation</li>
+          <li>Operational performance tracking</li>
+          <li>Data validation & optimization</li>
+        </ul>
       </div>
+
       <div class="phase">
-        <h2>Phase 4: Deployment & Scaling</h2>
-        <p>Construct full‑scale extraction facilities, integrate DLE modules, secure permitting and commence commercial production with ongoing technical support.</p>
+        <h2>Phase 4: Scaling & Integration</h2>
+        <ul>
+          <li>Designing commercial-scale extraction units</li>
+          <li>Power, water & chemical supply integration</li>
+          <li>Environmental and ESG compliance checks</li>
+        </ul>
       </div>
+
       <div class="phase">
-        <h2>Phase 5: Long‑Term Monitoring</h2>
-        <p>Operate production with continuous monitoring of brine chemistry, ESG metrics and smart contract performance. Adjust processes and reinvest to optimise returns.</p>
+        <h2>Phase 5: Smart Contract Commissioning</h2>
+        <ul>
+          <li>Blockchain-backed partnership execution</li>
+          <li>Automated revenue distribution setup</li>
+          <li>Full transparency across project milestones</li>
+        </ul>
       </div>
-    </div>
+
+    </section>
   </main>
+
+  <!-- FOOTER -->
   <footer>
-    <div class="container"><p>&copy; 2025 Gigahash Global. All rights reserved.</p></div>
+    <div class="container">
+      <p>&copy; 2025 Gigahash Global. All rights reserved.</p>
+    </div>
   </footer>
+
 </body>
 </html>

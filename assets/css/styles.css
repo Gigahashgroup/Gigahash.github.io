@@ -113,7 +113,7 @@ p { margin: 0; }
 .process-item p { color: #aebccd; font-size: .9rem; }
 
 .feature-band { display: grid; grid-template-columns: 1.2fr .8fr; min-height: 34rem; background: white; }
-.feature-media { min-height: 26rem; background: var(--feature-image,linear-gradient(135deg,var(--teal),var(--blue))) center/cover; }
+.feature-media { min-height: 26rem; background-color: var(--deep); background-image: var(--feature-image,linear-gradient(135deg,var(--teal),var(--blue))); background-position: center; background-size: cover; background-repeat: no-repeat; }
 .feature-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem,6vw,5rem); }
 .feature-copy p:not(.eyebrow) { margin-top: 1.25rem; color: var(--muted); }
 

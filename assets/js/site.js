@@ -1,18 +1,52 @@
 (() => {
+  'use strict';
+
+  const track = (eventName, parameters = {}) => {
+    try {
+      if (typeof window.gtag === 'function') window.gtag('event', eventName, parameters);
+      else if (Array.isArray(window.dataLayer)) window.dataLayer.push({ event: eventName, ...parameters });
+    } catch (_) {
+      // Analytics must never interfere with the website experience.
+    }
+  };
+
   const header = document.querySelector('.site-header');
   const toggle = document.querySelector('.menu-toggle');
   const links = document.querySelector('.nav-links');
 
+  document.querySelectorAll('nav').forEach((nav) => {
+    if (!nav.hasAttribute('aria-label')) nav.setAttribute('aria-label', 'Main navigation');
+  });
+  document.querySelectorAll('.brand-mark').forEach((mark) => mark.setAttribute('aria-hidden', 'true'));
+  if (toggle && !toggle.hasAttribute('aria-label')) toggle.setAttribute('aria-label', 'Open navigation');
+
+  const closeMenu = () => {
+    links?.classList.remove('open');
+    toggle?.setAttribute('aria-expanded', 'false');
+    toggle?.setAttribute('aria-label', 'Open navigation');
+  };
+
   toggle?.addEventListener('click', () => {
     const open = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', String(!open));
+    toggle.setAttribute('aria-label', open ? 'Open navigation' : 'Close navigation');
     links?.classList.toggle('open', !open);
   });
 
   links?.addEventListener('click', (event) => {
-    if (event.target.closest('a')) {
-      links.classList.remove('open');
-      toggle?.setAttribute('aria-expanded', 'false');
+    const link = event.target.closest('a');
+    if (!link) return;
+    closeMenu();
+    const destination = link.getAttribute('href') || '';
+    if (/technology|trade-energy-resources|media-entertainment|industrial-refrigeration/.test(destination)) {
+      track('division_navigation', { destination });
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && links?.classList.contains('open')) {
+      closeMenu();
+      toggle?.focus();
     }
   });
 
@@ -30,27 +64,67 @@
         }
       }), { threshold: .12 })
     : null;
-  document.querySelectorAll('.reveal').forEach((el) => observer ? observer.observe(el) : el.classList.add('visible'));
+  document.querySelectorAll('.reveal').forEach((element) => observer ? observer.observe(element) : element.classList.add('visible'));
+
+  document.querySelectorAll('#year').forEach((element) => {
+    element.textContent = String(new Date().getFullYear());
+  });
 
   const params = new URLSearchParams(window.location.search);
-  const inquiry = params.get('inquiry');
   const select = document.querySelector('[name="inquiry_type"]');
-  if (inquiry && select) select.value = inquiry;
+  const validInquiryValues = select ? Array.from(select.options).map((option) => option.value) : [];
+  let inquiry = params.get('inquiry');
+  try {
+    if (!inquiry) inquiry = sessionStorage.getItem('gigahash_inquiry_type');
+  } catch (_) {
+    // The form remains understandable when browser storage is unavailable.
+  }
+  if (select && inquiry && validInquiryValues.includes(inquiry)) select.value = inquiry;
+  select?.addEventListener('change', () => {
+    try { sessionStorage.setItem('gigahash_inquiry_type', select.value); } catch (_) {}
+    track('opportunity_selection', { inquiry_type: select.value });
+  });
+
+  document.querySelectorAll('a[href]').forEach((link) => {
+    link.addEventListener('click', () => {
+      const href = link.getAttribute('href') || '';
+      if (href.includes('opportunities.html')) track('opportunity_cta_click', { destination: href });
+      if (href.includes('rewardsplanet.html')) track('rewardsplanet_interest', { destination: href });
+      if (/^https?:\/\//.test(href) && !href.includes(location.hostname)) track('outbound_link', { destination: href });
+    });
+  });
 
   document.querySelectorAll('form[data-ajax]').forEach((form) => {
+    form.addEventListener('input', () => {
+      track('form_start', { form_subject: form.querySelector('[name="_subject"]')?.value || 'inquiry' });
+    }, { once: true });
+
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       const status = form.querySelector('.form-status');
       const button = form.querySelector('button[type="submit"]');
-      if (!form.checkValidity()) return form.reportValidity();
+      if (!form.checkValidity()) {
+        track('form_validation_error');
+        return form.reportValidity();
+      }
+
       button.disabled = true;
       if (status) status.textContent = 'Sending your inquiry...';
       try {
-        const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
         if (!response.ok) throw new Error('Submission failed');
+        track('form_submission_success', { inquiry_type: select?.value || 'general' });
         form.reset();
+        try { sessionStorage.removeItem('gigahash_inquiry_type'); } catch (_) {}
         if (status) status.textContent = 'Thank you. Your inquiry has been received.';
-      } catch (error) {
+        const successUrl = form.dataset.successUrl;
+        if (successUrl) window.setTimeout(() => window.location.assign(successUrl), 900);
+      } catch (_) {
+        track('form_submission_error');
         if (status) status.textContent = 'We could not send this form. Please email info@gigahashgroup.com.';
       } finally {
         button.disabled = false;

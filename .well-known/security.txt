@@ -1,0 +1,5 @@
+Contact: mailto:info@gigahashgroup.com
+Expires: 2027-08-21T23:59:59Z
+Canonical: https://gigahashgroup.com/.well-known/security.txt
+Policy: https://github.com/Gigahashgroup/Gigahash.github.io/security/policy
+Preferred-Languages: en

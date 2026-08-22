@@ -221,6 +221,7 @@ p { margin: 0; }
 .field textarea { min-height: 9rem; resize: vertical; }
 .form-guidance { color: var(--muted); font-size: .75rem; line-height: 1.45; }
 .form-status { grid-column: 1 / -1; min-height: 1.5rem; color: var(--green); font-weight: 700; }
+.honeypot { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; opacity: 0 !important; pointer-events: none !important; }
 .contact-details { display: grid; gap: 1rem; margin-top: 1rem; }
 .contact-details a { color: var(--navy); font-weight: 750; }
 .legal-content { display: grid; gap: 2rem; max-width: 54rem; }

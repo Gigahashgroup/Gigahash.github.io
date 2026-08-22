@@ -1,0 +1,48 @@
+name: Static site security
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  security-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify browser protections
+        shell: bash
+        run: |
+          set -euo pipefail
+          html_count=$(find . -maxdepth 1 -name '*.html' | wc -l)
+          csp_count=$(grep -l 'Content-Security-Policy' ./*.html | wc -l)
+          test "$html_count" -eq "$csp_count"
+          grep -q "object-src &apos;none&apos;" ./*.html
+          grep -q "form-action https://formspree.io" ./*.html
+          grep -q 'strict-origin-when-cross-origin' ./*.html
+
+      - name: Reject unsafe executable patterns
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RInE 'eval\(|new Function|document\.write|javascript:|<iframe|<object|<embed' --include='*.html' --include='*.js' .; then
+            echo 'Unsafe executable pattern detected.'
+            exit 1
+          fi
+
+      - name: Restrict production dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RInE '<script[^>]+src="https?://|images\.unsplash\.com' --include='*.html' .; then
+            echo 'Unexpected third-party executable or image dependency detected.'
+            exit 1
+          fi
+          test -f .well-known/security.txt
+          test -f SECURITY.md

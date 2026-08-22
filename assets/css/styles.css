@@ -72,9 +72,12 @@ p { margin: 0; }
 .site-header { position: absolute; inset: 0 0 auto; z-index: 20; color: white; }
 .site-header.scrolled, .site-header.inner { position: sticky; top: 0; background: rgba(7,23,45,.97); box-shadow: 0 1px 0 rgba(255,255,255,.1); backdrop-filter: blur(14px); }
 .nav { min-height: 5rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
-.brand { display: inline-flex; align-items: center; gap: .7rem; font-weight: 850; letter-spacing: .04em; text-decoration: none; white-space: nowrap; }
-.brand-mark { width: 2rem; aspect-ratio: 1; flex: 0 0 auto; background: url('/assets/img/gigahash-mark.svg') center/contain no-repeat; filter: drop-shadow(0 3px 9px rgba(0,0,0,.18)); }
+.brand { display: inline-flex; align-items: center; gap: .7rem; text-decoration: none; white-space: nowrap; }
+.brand-mark { width: 2.75rem; aspect-ratio: 1; flex: 0 0 auto; background: url('/assets/img/gigahash-mark-gold.png') center/contain no-repeat; }
 .brand-mark::after { content: none; }
+.brand-wordmark { display: grid; gap: .32rem; line-height: .86; }
+.brand-wordmark > span { color: white; font-size: 1.04rem; font-weight: 300; letter-spacing: .09em; }
+.brand-wordmark > small { color: #c8a24a; font-size: .54rem; font-weight: 600; letter-spacing: .42em; }
 .nav-links { display: flex; align-items: center; gap: 1.35rem; }
 .nav-links a { font-size: .88rem; font-weight: 650; text-decoration: none; }
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: #5de0d0; }
@@ -273,6 +276,11 @@ p { margin: 0; }
 }
 
 @media (max-width: 600px) {
+  .brand { gap: .55rem; }
+  .brand-mark { width: 2.35rem; }
+  .brand-wordmark { gap: .27rem; }
+  .brand-wordmark > span { font-size: .88rem; }
+  .brand-wordmark > small { font-size: .46rem; }
   .section { padding-block: 4rem; }
   .hero { min-height: 44rem; }
   .hero-content { padding-bottom: 3.5rem; }

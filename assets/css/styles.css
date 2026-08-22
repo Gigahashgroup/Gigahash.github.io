@@ -256,6 +256,7 @@ p { margin: 0; }
   .nav-links a { padding: .9rem; border-bottom: 1px solid rgba(255,255,255,.1); }
   .nav-cta { border: 0; }
   .intro-grid, .editorial-grid, .editorial-grid.reverse, .feature-band, .form-shell { grid-template-columns: 1fr; }
+  .feature-media { display: none; }
   .spotlight-grid { grid-template-columns: 1fr; }
   .capability-grid, .trust-grid { grid-template-columns: repeat(2,1fr); }
   .division-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
@@ -310,7 +311,6 @@ p { margin: 0; }
   .compact-section .process-item { padding: 1.5rem .35rem .75rem 0; }
   .compact-section .process-item:last-child { grid-column: 1 / -1; }
   .feature-band { min-height: 0; }
-  .feature-media { display: none; }
   .feature-copy { padding: 2.75rem 1rem 3.25rem; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; }

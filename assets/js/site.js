@@ -102,15 +102,36 @@
   }
   if (select && inquiry && validInquiryValues.includes(inquiry)) select.value = inquiry;
   const inquiryGuidance = document.querySelector('#inquiry-guidance');
+  const messageLabel = document.querySelector('label[for="message"]');
+  const inquiryInstructions = {
+    technology: 'Include the business need, intended users, existing systems, required integrations, current stage and target timing.',
+    'oil-gas': 'Include the product, specification, volume, origin or destination, delivery basis, timing, mandate status and available documentation. Do not submit confidential documents through this form.',
+    fisheries: 'Include the species or product, fresh/frozen/smoked form, volume, origin or destination, season or timing, cold-chain requirements, mandate status and available origin or compliance documentation.',
+    trade: 'Include the product, specification, volume, origin or destination, delivery terms, timing and whether you represent the buyer or seller.',
+    resources: 'Include the resource or asset, location, ownership or mandate status, project stage, available documentation and the role you want Gigahash to consider.',
+    media: 'Include the project, talent or production need, territory, audience, timing, rights status and the type of partner or representation required.',
+    industrial: 'Include the operating use case, site, capacity, temperature or performance requirements, equipment status, location and target timing.',
+    investment: 'Include the opportunity, sector, current stage, capital or strategic need, proposed role and relevant timing.',
+    rewardsplanet: 'Include your organization, proposed partnership type, technology, content, reward or market contribution, and the outcome you want to explore.',
+    other: 'Describe the business need, location, current stage, timing and the role you want Gigahash to consider.'
+  };
+  const inquiryLabels = {
+    technology: 'Describe the technology project',
+    'oil-gas': 'Describe the oil, gas or petroleum opportunity',
+    fisheries: 'Describe the fisheries or seafood opportunity',
+    trade: 'Describe the trade or supply requirement',
+    resources: 'Describe the mining or resource opportunity',
+    media: 'Describe the media, talent or production inquiry',
+    industrial: 'Describe the industrial or refrigeration project',
+    investment: 'Describe the investment or strategic opportunity',
+    rewardsplanet: 'Describe the RewardsPlanet partnership idea',
+    other: 'Describe the opportunity'
+  };
   const updateInquiryGuidance = () => {
     if (!inquiryGuidance || !select) return;
-    if (select.value === 'oil-gas') {
-      inquiryGuidance.textContent = 'Include the product, specification, volume, origin or destination, delivery basis, timing, mandate status and available documentation. Do not submit confidential documents through this form.';
-    } else if (select.value === 'fisheries') {
-      inquiryGuidance.textContent = 'Include the species or product, fresh/frozen/smoked form, volume, origin or destination, season or timing, cold-chain requirements, mandate status and available origin or compliance documentation.';
-    } else {
-      inquiryGuidance.textContent = 'Choose the closest match so we can route your submission appropriately.';
-    }
+    inquiryGuidance.textContent = inquiryInstructions[select.value]
+      || 'Choose the closest match so we can route your submission appropriately.';
+    if (messageLabel) messageLabel.textContent = inquiryLabels[select.value] || 'Briefly describe the opportunity';
   };
   updateInquiryGuidance();
   select?.addEventListener('change', () => {

@@ -60,6 +60,11 @@ p { margin: 0; }
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: #5de0d0; }
 .nav-cta { padding: .62rem .85rem; border: 1px solid var(--teal); border-radius: .3rem; }
 .menu-toggle { display: none; width: 2.75rem; height: 2.75rem; border: 1px solid rgba(255,255,255,.3); border-radius: .35rem; background: transparent; color: white; cursor: pointer; }
+.menu-icon { width: 1.15rem; display: grid; gap: .25rem; }
+.menu-icon span { display: block; height: 2px; border-radius: 2px; background: currentColor; transition: transform .2s ease, opacity .2s ease; }
+.menu-toggle[aria-expanded="true"] .menu-icon span:first-child { transform: translateY(.38rem) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] .menu-icon span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] .menu-icon span:last-child { transform: translateY(-.38rem) rotate(-45deg); }
 
 .hero { position: relative; min-height: 92svh; display: grid; align-items: end; overflow: hidden; background: var(--deep); color: white; }
 .hero::before, .page-hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg,rgba(7,23,45,.98) 0%,rgba(7,23,45,.88) 42%,rgba(7,23,45,.18) 100%), var(--hero-image, linear-gradient(135deg,#07172d,#0d5968)); background-size: cover; background-position: center; }

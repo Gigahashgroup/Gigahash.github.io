@@ -104,9 +104,13 @@
   const inquiryGuidance = document.querySelector('#inquiry-guidance');
   const updateInquiryGuidance = () => {
     if (!inquiryGuidance || !select) return;
-    inquiryGuidance.textContent = select.value === 'oil-gas'
-      ? 'Include the product, specification, volume, origin or destination, delivery basis, timing, mandate status and available documentation. Do not submit confidential documents through this form.'
-      : 'Choose the closest match so we can route your submission appropriately.';
+    if (select.value === 'oil-gas') {
+      inquiryGuidance.textContent = 'Include the product, specification, volume, origin or destination, delivery basis, timing, mandate status and available documentation. Do not submit confidential documents through this form.';
+    } else if (select.value === 'fisheries') {
+      inquiryGuidance.textContent = 'Include the species or product, fresh/frozen/smoked form, volume, origin or destination, season or timing, cold-chain requirements, mandate status and available origin or compliance documentation.';
+    } else {
+      inquiryGuidance.textContent = 'Choose the closest match so we can route your submission appropriately.';
+    }
   };
   updateInquiryGuidance();
   select?.addEventListener('change', () => {

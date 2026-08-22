@@ -128,6 +128,11 @@ p { margin: 0; }
 .sector-tags { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: .35rem; }
 .sector-tags span { padding: .5rem .75rem; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; color: #dce6f2; font-size: .78rem; font-weight: 700; }
 .mandate-note { padding: 1rem 1.15rem; border-left: 3px solid var(--teal); background: rgba(255,255,255,.07); color: #dce6f2; font-size: .92rem; }
+.seafood-section { background: #eaf3f1; }
+.seafood-section .section-copy > p:not(.eyebrow) { color: #506577; }
+.seafood-section .sector-tags span { border-color: rgba(13,35,68,.18); background: rgba(255,255,255,.55); color: var(--navy); }
+.seafood-section .mandate-note { border-left-color: var(--blue); background: rgba(255,255,255,.72); color: var(--ink); }
+.service-grid.two-up { grid-template-columns: repeat(2,1fr); }
 
 .capability-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; margin-top: 2.5rem; border: 1px solid rgba(255,255,255,.13); background: rgba(255,255,255,.13); }
 .capability-item { min-height: 15rem; padding: 1.5rem; background: rgba(7,23,45,.88); }

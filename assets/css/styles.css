@@ -101,14 +101,16 @@ p { margin: 0; }
 .stat strong { display: block; color: var(--navy); font-size: 1.5rem; }
 .stat span { color: var(--muted); font-size: .82rem; }
 
-.division-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; }
-.division-card { position: relative; min-height: 30rem; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; padding: 2rem; border-radius: var(--radius); color: white; text-decoration: none; background: var(--card-image,linear-gradient(135deg,#123,#456)) center/cover; isolation: isolate; }
+.division-section { padding-block: clamp(4.5rem,7vw,6.5rem); }
+.division-section .section-head { margin-bottom: 2rem; }
+.division-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1rem; }
+.division-card { position: relative; min-height: 24rem; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; padding: 1.5rem; border-radius: var(--radius); color: white; text-decoration: none; background: var(--card-image,linear-gradient(135deg,#123,#456)) center/cover; isolation: isolate; }
 .division-card::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg,rgba(7,23,45,.96),rgba(7,23,45,.08) 70%); transition: opacity .25s; }
 .division-card::after { content: "\2197"; position: absolute; right: 1.5rem; top: 1.5rem; width: 2.7rem; aspect-ratio: 1; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.5); border-radius: 50%; font-size: 1.2rem; }
 .division-card:hover::before { opacity: .82; }
 .division-card .number { color: var(--accent,var(--teal)); font-size: .8rem; font-weight: 850; letter-spacing: .15em; }
-.division-card h3 { max-width: 16ch; margin: .8rem 0; }
-.division-card p { max-width: 46ch; color: #d7e0ea; }
+.division-card h3 { max-width: 16ch; margin: .7rem 0; font-size: clamp(1.35rem,2vw,1.8rem); }
+.division-card p { max-width: 46ch; color: #d7e0ea; font-size: .92rem; line-height: 1.55; }
 
 .process { display: grid; grid-template-columns: repeat(5,1fr); margin-top: 3rem; border-top: 1px solid rgba(255,255,255,.2); }
 .process-item { position: relative; padding: 2rem 1.25rem 1rem 0; }
@@ -219,8 +221,8 @@ p { margin: 0; }
   .intro-grid, .editorial-grid, .editorial-grid.reverse, .feature-band, .form-shell { grid-template-columns: 1fr; }
   .spotlight-grid { grid-template-columns: 1fr; }
   .capability-grid, .trust-grid { grid-template-columns: repeat(2,1fr); }
-  .division-grid { grid-template-columns: 1fr; }
-  .division-card { min-height: 25rem; }
+  .division-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .division-card { min-height: 19rem; }
   .pillars, .service-grid { grid-template-columns: repeat(2,1fr); }
   .process { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -234,6 +236,14 @@ p { margin: 0; }
   .page-hero { min-height: 34rem; }
   .stat-line, .pillars, .service-grid, .route-grid, .form { grid-template-columns: 1fr; }
   .capability-grid, .trust-grid { grid-template-columns: 1fr; }
+  .division-section { padding-block: 3.5rem; }
+  .division-section .section-head { margin-bottom: 1.5rem; }
+  .division-grid { grid-template-columns: 1fr; gap: .75rem; }
+  .division-card { min-height: 12.5rem; padding: 1.25rem; }
+  .division-card::before { background: linear-gradient(90deg,rgba(7,23,45,.97),rgba(7,23,45,.6)); }
+  .division-card::after { right: 1rem; top: 1rem; width: 2.25rem; }
+  .division-card h3 { max-width: 20ch; margin: .45rem 0; font-size: 1.4rem; }
+  .division-card p { max-width: calc(100% - 2rem); margin: 0; font-size: .84rem; line-height: 1.4; }
   .trust-item { border-right: 0; border-bottom: 1px solid var(--line); }
   .trust-item:last-child { border-bottom: 0; }
   .field.full { grid-column: auto; }

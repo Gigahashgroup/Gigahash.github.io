@@ -20,6 +20,20 @@
   document.querySelectorAll('.brand-mark').forEach((mark) => mark.setAttribute('aria-hidden', 'true'));
   if (toggle && !toggle.hasAttribute('aria-label')) toggle.setAttribute('aria-label', 'Open navigation');
 
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  const divisionPages = new Set(['technology.html', 'trade-energy-resources.html', 'media-entertainment.html', 'industrial-refrigeration.html']);
+  document.querySelectorAll('.nav-links a').forEach((link) => {
+    const destination = (link.getAttribute('href') || '').split(/[?#]/)[0] || 'index.html';
+    const isCurrent = destination === currentPage
+      || (divisionPages.has(currentPage) && link.getAttribute('href')?.includes('#divisions'));
+    if (isCurrent) link.setAttribute('aria-current', 'page');
+    else if (link.getAttribute('aria-current') === 'page') link.removeAttribute('aria-current');
+  });
+
+  document.querySelectorAll('img').forEach((image) => {
+    if (!image.hasAttribute('decoding')) image.setAttribute('decoding', 'async');
+  });
+
   const closeMenu = () => {
     links?.classList.remove('open');
     toggle?.setAttribute('aria-expanded', 'false');
@@ -49,6 +63,13 @@
       toggle?.focus();
     }
   });
+
+  document.addEventListener('click', (event) => {
+    if (links?.classList.contains('open') && !event.target.closest('.nav')) closeMenu();
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) closeMenu();
+  }, { passive: true });
 
   if (header && !header.classList.contains('inner')) {
     const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 40);
@@ -80,9 +101,18 @@
     // The form remains understandable when browser storage is unavailable.
   }
   if (select && inquiry && validInquiryValues.includes(inquiry)) select.value = inquiry;
+  const inquiryGuidance = document.querySelector('#inquiry-guidance');
+  const updateInquiryGuidance = () => {
+    if (!inquiryGuidance || !select) return;
+    inquiryGuidance.textContent = select.value === 'oil-gas'
+      ? 'Include the product, specification, volume, origin or destination, delivery basis, timing, mandate status and available documentation. Do not submit confidential documents through this form.'
+      : 'Choose the closest match so we can route your submission appropriately.';
+  };
+  updateInquiryGuidance();
   select?.addEventListener('change', () => {
     try { sessionStorage.setItem('gigahash_inquiry_type', select.value); } catch (_) {}
     track('opportunity_selection', { inquiry_type: select.value });
+    updateInquiryGuidance();
   });
 
   document.querySelectorAll('a[href]').forEach((link) => {

@@ -136,6 +136,11 @@ p { margin: 0; }
 .division-card .number { color: var(--accent,var(--teal)); font-size: .8rem; font-weight: 850; letter-spacing: .15em; }
 .division-card h3 { max-width: 16ch; margin: .7rem 0; font-size: clamp(1.35rem,2vw,1.8rem); }
 .division-card p { max-width: 46ch; color: #d7e0ea; font-size: .92rem; line-height: 1.55; }
+.business-gateway { padding: clamp(2.5rem,5vw,4rem) 0; }
+.business-gateway-inner { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 2rem; align-items: center; }
+.business-gateway-inner h2 { margin: .6rem 0 .75rem; font-size: clamp(2rem,4vw,3.4rem); }
+.business-gateway-inner p:not(.eyebrow) { max-width: 58rem; color: #b9c6d6; }
+.business-gateway-inner .button { margin: 0; white-space: nowrap; }
 .compact-section { padding-block: clamp(4rem,6vw,5.5rem); }
 .compact-section .section-head { margin-bottom: 2rem; }
 .gateway-section { padding-block: clamp(4rem,6vw,5rem); background: linear-gradient(135deg,#f6f3ed,#fff); }
@@ -276,6 +281,10 @@ p { margin: 0; }
 }
 
 @media (max-width: 600px) {
+  .business-gateway { padding: 3rem 0; }
+  .business-gateway-inner { grid-template-columns: 1fr; gap: 1.35rem; }
+  .business-gateway-inner h2 { font-size: 2rem; }
+  .business-gateway-inner .button { width: 100%; justify-content: center; }
   .brand { gap: .55rem; }
   .brand-mark { width: 2.35rem; }
   .brand-wordmark { gap: .27rem; }

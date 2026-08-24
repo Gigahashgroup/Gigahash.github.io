@@ -21,11 +21,19 @@
   if (toggle && !toggle.hasAttribute('aria-label')) toggle.setAttribute('aria-label', 'Open navigation');
 
   const currentPage = location.pathname.split('/').pop() || 'index.html';
-  const divisionPages = new Set(['technology.html', 'trade-energy-resources.html', 'media-entertainment.html', 'industrial-refrigeration.html']);
+  const divisionPages = new Set([
+    'technology.html',
+    'trade-energy-resources.html',
+    'oil-gas-petroleum.html',
+    'fisheries-seafood.html',
+    'mining-specialty-products.html',
+    'media-entertainment.html',
+    'industrial-refrigeration.html'
+  ]);
   document.querySelectorAll('.nav-links a').forEach((link) => {
     const destination = (link.getAttribute('href') || '').split(/[?#]/)[0] || 'index.html';
     const isCurrent = destination === currentPage
-      || (divisionPages.has(currentPage) && link.getAttribute('href')?.includes('#divisions'));
+      || (divisionPages.has(currentPage) && destination === 'what-we-do.html');
     if (isCurrent) link.setAttribute('aria-current', 'page');
     else if (link.getAttribute('aria-current') === 'page') link.removeAttribute('aria-current');
   });

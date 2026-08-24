@@ -227,6 +227,7 @@ p { margin: 0; }
 .route-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-grid); }
 .route { display: flex; min-height: 9rem; flex-direction: column; justify-content: space-between; padding: 1.5rem; border: 1px solid var(--line); background: white; color: var(--ink); text-decoration: none; transition: transform .2s, box-shadow .2s; }
 .route h3 { color: var(--navy); }
+.route p { margin-top: .65rem; color: var(--muted); font-size: .88rem; line-height: 1.5; }
 .route:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
 .route small { color: var(--teal); font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
 .mobile-opportunity-link { display: none; }
@@ -355,6 +356,7 @@ p { margin: 0; }
   .route-grid.compact-routes { grid-template-columns: 1fr 1fr; gap: .65rem; }
   .compact-routes .route { min-height: 6.5rem; padding: .9rem; }
   .compact-routes .route h3 { font-size: .98rem; }
+  .compact-routes .route p { display: none; }
   .sector-pair .panel-media { height: 11rem; }
   .trust-item { border-right: 0; border-bottom: 1px solid var(--line); }
   .trust-item:last-child { border-bottom: 0; }

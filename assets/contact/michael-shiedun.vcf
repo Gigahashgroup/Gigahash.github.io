@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Shiedun;Michael;;;
+FN:Michael Shiedun
+ORG:Gigahash Group LLC
+TITLE:Chief Executive Officer
+EMAIL;TYPE=INTERNET,WORK:michael@gigahashgroup.com
+URL:https://gigahashgroup.com/
+ADR;TYPE=WORK:;;2226 Eastlake Ave E\, #425;Seattle;WA;98102;United States
+NOTE:Gigahash Global is the public-facing brand of Gigahash Group LLC.
+END:VCARD

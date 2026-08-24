@@ -1,0 +1,30 @@
+.digital-card-page { min-height: 100svh; background: radial-gradient(circle at 85% 15%,rgba(0,168,150,.2),transparent 28%),linear-gradient(145deg,#07172d,#0d2344 62%,#081a31); color: white; }
+.digital-card-header { width: min(calc(100% - 2rem),1180px); min-height: 6rem; display: flex; align-items: center; margin-inline: auto; }
+.digital-card-main { width: min(calc(100% - 2rem),1180px); margin-inline: auto; padding: 2rem 0 4rem; }
+.digital-card { display: grid; grid-template-columns: minmax(0,1.4fr) minmax(16rem,.6fr); overflow: hidden; border: 1px solid rgba(255,255,255,.15); border-radius: 1.5rem; background: rgba(7,23,45,.74); box-shadow: 0 30px 90px rgba(0,0,0,.28); backdrop-filter: blur(18px); }
+.digital-card-copy { padding: clamp(2rem,6vw,5rem); }
+.digital-card-copy h1 { max-width: none; font-size: clamp(3rem,7vw,5.6rem); }
+.digital-card-title { margin-top: 1.2rem; color: white; font-size: clamp(1.2rem,2.2vw,1.65rem); font-weight: 750; }
+.digital-card-company { margin-top: .25rem; color: #d29a40; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.digital-card-summary { max-width: 52ch; margin-top: 1.5rem; color: #b9c6d6; font-size: 1.05rem; }
+.digital-card-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+.digital-card-links { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1px; margin-top: 2.5rem; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.14); }
+.digital-card-links a { min-height: 7rem; display: flex; flex-direction: column; justify-content: space-between; padding: 1rem; background: rgba(7,23,45,.82); text-decoration: none; }
+.digital-card-links span { color: #8fa1b6; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+.digital-card-links strong { color: white; font-size: .95rem; }
+.digital-card-qr { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: clamp(2rem,5vw,4rem); background: #f6f3ed; color: #152238; text-align: center; }
+.qr-frame { width: min(100%,18rem); padding: 1rem; border: 1px solid rgba(13,35,68,.14); border-radius: 1rem; background: white; }
+.digital-card-qr strong { margin-top: 1.4rem; color: #0d2344; font-size: 1.35rem; }
+.digital-card-qr span { max-width: 24ch; margin-top: .45rem; color: #637083; font-size: .9rem; }
+.digital-card-legal { margin-top: 1.5rem; color: #8292a6; font-size: .75rem; text-align: center; }
+@media (max-width: 780px) {
+  .digital-card-header { min-height: 5rem; }
+  .digital-card-main { padding-top: 1rem; }
+  .digital-card { grid-template-columns: 1fr; }
+  .digital-card-copy { padding: 2.25rem 1.25rem; }
+  .digital-card-copy h1 { font-size: clamp(2.8rem,14vw,4.5rem); }
+  .digital-card-actions .button { width: 100%; }
+  .digital-card-links { grid-template-columns: 1fr; }
+  .digital-card-links a { min-height: 5.5rem; }
+  .digital-card-qr { padding: 2.5rem 1.25rem; }
+}

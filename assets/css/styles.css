@@ -381,6 +381,7 @@ p { margin: 0; }
   /* Keep the homepage focused and comfortably paced on handheld screens. */
   .home-hero { min-height: 40rem; }
   .home-hero + .trust-strip { display: none; }
+  .home-hero ~ .business-gateway { display: none; }
   .home-hero ~ .section { padding-block: var(--space-section-compact); }
   .home-hero ~ .section .section-figure { min-height: 13rem; }
   .home-hero ~ .section .editorial-grid { gap: 1.5rem; }

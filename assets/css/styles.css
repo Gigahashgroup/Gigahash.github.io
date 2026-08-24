@@ -229,6 +229,7 @@ p { margin: 0; }
 .route h3 { color: var(--navy); }
 .route:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
 .route small { color: var(--teal); font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+.mobile-opportunity-link { display: none; }
 
 .quote { max-width: 25ch; font-size: clamp(2rem,5vw,4rem); line-height: 1.08; letter-spacing: -.04em; }
 .list-clean { display: grid; gap: .8rem; padding: 0; list-style: none; }
@@ -374,6 +375,24 @@ p { margin: 0; }
   .site-footer { padding-top: var(--space-section); }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   .footer-bottom { flex-direction: column; }
+
+  /* Keep the homepage focused and comfortably paced on handheld screens. */
+  .home-hero { min-height: 40rem; }
+  .home-hero + .trust-strip { display: none; }
+  .home-hero ~ .section { padding-block: var(--space-section-compact); }
+  .home-hero ~ .section .section-figure { min-height: 13rem; }
+  .home-hero ~ .section .editorial-grid { gap: 1.5rem; }
+  .home-hero ~ .section .stat-line { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .home-hero ~ .section .stat { padding: .9rem .35rem; }
+  .home-hero ~ .section .stat strong { font-size: 1.25rem; }
+  .home-hero ~ .section .stat span { font-size: .66rem; }
+  .home-hero ~ .compact-section .section-head p:last-child { display: none; }
+  .home-hero ~ .compact-section .process-item p { display: none; }
+  .home-hero ~ .compact-section .process-item { min-height: 5.75rem; }
+  .home-hero ~ .feature-band .feature-media { min-height: 11rem; max-height: 11rem; }
+  .home-hero ~ .feature-band .feature-copy { padding-block: var(--space-section-compact); }
+  .home-hero ~ .gateway-section .compact-routes .route:nth-child(n+5) { display: none; }
+  .home-hero ~ .gateway-section .mobile-opportunity-link { display: flex; width: 100%; margin-top: 1rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

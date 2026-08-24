@@ -13,3 +13,7 @@ Please do not publicly disclose a suspected vulnerability before Gigahash Global
 The current scope is the public corporate website at `gigahashgroup.com`. Third-party services, including Formspree and GitHub, should also be reported through their respective security programs when the issue originates in those services.
 
 RewardsPlanet and other future applications may publish separate security policies before they introduce accounts, payments or other application functionality.
+
+## Deployment hardening
+
+This repository is deployed as a static corporate website. Before adding accounts, payments, Rewards functionality, or other transactional services, keep those capabilities in their designated application and place the public website behind a delivery layer that can enforce HTTPS redirects and response headers such as Content-Security-Policy, Permissions-Policy, Referrer-Policy, X-Content-Type-Options, and frame-embedding controls. Do not rely on this website for authentication, payment, account, or private-record handling.

@@ -46,3 +46,92 @@ jobs:
           fi
           test -f .well-known/security.txt
           test -f SECURITY.md
+
+      - name: Verify local routes and discovery files
+        shell: bash
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+
+          const pages = fs.readdirSync('.').filter((file) => file.endsWith('.html'));
+          const missing = [];
+          const domain = fs.readFileSync('CNAME', 'utf8').trim();
+          const canonicalOrigin = `https://${domain}`;
+
+          for (const page of pages) {
+            const html = fs.readFileSync(page, 'utf8');
+            const canonical = html.match(/<link rel="canonical" href="([^"]+)"/i)?.[1];
+            const isNoIndex = /<meta name="robots" content="[^"]*noindex/i.test(html);
+            if (!isNoIndex && (!canonical || !canonical.startsWith(canonicalOrigin))) {
+              missing.push(`${page}: canonical URL does not match CNAME`);
+            }
+            if (html.includes('assets/css/styles.css') && !/assets\/css\/styles\.css\?v=[^"]+/.test(html)) {
+              missing.push(`${page}: shared stylesheet is not versioned`);
+            }
+            if (html.includes('assets/js/site.js') && !/assets\/js\/site\.js\?v=[^"]+/.test(html)) {
+              missing.push(`${page}: shared script is not versioned`);
+            }
+            for (const match of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
+              let target = match[1].split(/[?#]/)[0];
+              if (!target || /^(?:https?:|mailto:|tel:|data:|#)/.test(target)) continue;
+              if (target === '/') target = 'index.html';
+              const localTarget = target.startsWith('/')
+                ? target.slice(1)
+                : path.join(path.dirname(page), target);
+              if (!fs.existsSync(localTarget)) missing.push(`${page} -> ${match[1]}`);
+            }
+          }
+
+          const sitemap = fs.readFileSync('sitemap.xml', 'utf8');
+          for (const match of sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)) {
+            const url = new URL(match[1]);
+            if (url.origin !== canonicalOrigin) missing.push(`sitemap.xml -> unexpected domain ${match[1]}`);
+            const localTarget = url.pathname.replace(/^\//, '') || 'index.html';
+            if (!fs.existsSync(localTarget)) missing.push(`sitemap.xml -> ${match[1]}`);
+          }
+
+          if (!fs.readFileSync('robots.txt', 'utf8').includes(`${canonicalOrigin}/sitemap.xml`)) {
+            missing.push('robots.txt: sitemap URL does not match CNAME');
+          }
+
+          if (missing.length) throw new Error(`Missing local targets:\n${missing.join('\n')}`);
+          NODE
+
+      - name: Keep corporate forms and Rewards boundaries public-only
+        shell: bash
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('fs');
+
+          const pages = fs.readdirSync('.').filter((file) => file.endsWith('.html'));
+          const html = pages.map((page) => ({ page, html: fs.readFileSync(page, 'utf8') }));
+          const formPages = html.filter(({ html: contents }) => /<form\b/i.test(contents));
+          const expectedEndpoint = 'https://formspree.io/f/xldolbqa';
+          const failures = [];
+
+          for (const { page, html: contents } of formPages) {
+            const actions = [...contents.matchAll(/<form\b[^>]*\baction="([^"]+)"/gi)].map((match) => match[1]);
+            if (!actions.length || actions.some((action) => action !== expectedEndpoint)) {
+              failures.push(`${page}: unexpected form destination`);
+            }
+            if (/<input\b[^>]*\btype="password"/i.test(contents)) {
+              failures.push(`${page}: password field is not allowed on the corporate website`);
+            }
+            if (!/name="consent"[^>]*\brequired\b/i.test(contents)) {
+              failures.push(`${page}: consent control is required`);
+            }
+          }
+
+          const rewardsPage = fs.readFileSync('rewardsplanet.html', 'utf8');
+          if (/<(?:form|input|select|textarea)\b/i.test(rewardsPage)) {
+            failures.push('rewardsplanet.html: interactive transactional controls are not allowed');
+          }
+          if (/href="[^"]*(?:login|sign-up|signup|checkout|cart|account)[^"]*"/i.test(rewardsPage)) {
+            failures.push('rewardsplanet.html: transactional or authentication route detected');
+          }
+
+          if (failures.length) throw new Error(`Corporate-boundary check failed:\n${failures.join('\n')}`);
+          NODE

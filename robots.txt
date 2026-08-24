@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.gigahashgroup.com/sitemap.xml
+Sitemap: https://gigahashgroup.com/sitemap.xml
